@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="inventory_bom_report" model="ir.actions.report">
+        <field name="name">Bill of Materials Report</field>
+        <field name="model">inventory.boms</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="binding_model_id" ref="model_inventory_boms"/>
+        <field name="binding_type">report</field>
+        <field name="report_name">app1.report_bom_template</field>
+    </record>
+
+    <template id="report_bom_template">
+        <t t-call="web.html_container">
+            <t t-call="web.external_layout">
+                <t t-foreach="docs" t-as="o">
+                    <div class="page">
+                        <style>
+                            .bom-header {
+                                background: #00bcd4;
+                                color: white;
+                                padding: 20px;
+                                margin-bottom: 30px;
+                                text-align: center;
+                            }
+                            
+                            .bom-header h1 {
+                                margin: 0;
+                                font-size: 2rem;
+                                font-weight: 600;
+                            }
+                            
+                            .project-info {
+                                border: 2px solid #00bcd4;
+                                padding: 20px;
+                                margin-bottom: 25px;
+                            }
+                            
+                            .info-label {
+                                font-weight: 600;
+                                color: #000;
+                                margin-bottom: 5px;
+                            }
+                            
+                            .info-value {
+                                font-size: 1.1rem;
+                                color: #00bcd4;
+                                font-weight: 500;
+                            }
+                            
+                            .bom-table {
+                                border-collapse: collapse;
+                                width: 100%;
+                                margin-top: 20px;
+                                border: 2px solid #000;
+                            }
+                            
+                            .bom-table thead {
+                                background: #00bcd4;
+                                color: white;
+                            }
+                            
+                            .bom-table th {
+                                padding: 12px;
+                                text-align: left;
+                                font-weight: 600;
+                                border: 1px solid #000;
+                            }
+                            
+                            .bom-table td {
+                                padding: 10px;
+                                border: 1px solid #000;
+                                vertical-align: middle;
+                            }
+                            
+                            .bom-table tbody tr:nth-child(even) {
+                                background-color: #e0f7fa;
+                            }
+                            
+                            .number-cell {
+                                font-weight: bold;
+                                color: #000;
+                            }
+                            
+                            .footer-section {
+                                margin-top: 30px;
+                                border-top: 2px solid #00bcd4;
+                                padding-top: 20px;
+                            }
+                            
+                            .footer-info {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                            
+                            .footer-item {
+                                flex: 1;
+                                text-align: center;
+                            }
+                            
+                            .footer-label {
+                                font-weight: 600;
+                                color: #000;
+                                margin-bottom: 5px;
+                            }
+                            
+                            .footer-value {
+                                color: #00bcd4;
+                                font-weight: 500;
+                            }
+                            
+                            .notes-section {
+                                margin-top: 30px;
+                                border: 2px solid #00bcd4;
+                                padding: 20px;
+                            }
+                            
+                            .notes-title {
+                                color: #000;
+                                font-weight: 600;
+                                margin-bottom: 15px;
+                                font-size: 1.2rem;
+                            }
+                            
+                            .notes-content {
+                                color: #000;
+                                line-height: 1.5;
+                            }
+                        </style>
+
+                        <!-- Header Section -->
+                        <header class="header">
+                            <div class="header-logo">
+                                <img src="app1/static/description/logo.png" alt="Company Logo" style="height: 50px;"/>
+                            </div>
+                            <div class="header-date">
+                                <span t-field="o.date"/>
+                            </div>
+                        </header>
+
+                        <!-- Bill of Materials Header -->
+                        <div class="bom-header">
+                            <h1>Bill of Materials Report</h1>
+                        </div>
+
+                        <!-- Project Information -->
+                        <div class="project-info">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="info-label">Project:</div>
+                                    <div class="info-value">
+                                        <span t-field="o.project_id.name"/>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="info-label">Panel:</div>
+                                    <div class="info-value">
+                                        <span t-field="o.panel_id.name"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Main Table -->
+                        <table class="bom-table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Item Code</th>
+                                    <th>Quantity</th>
+                                    <th>Unit Price</th>
+                                    <th>Total Price</th>
+                                    <th>Deducted Qty</th>
+                                    <th>Remaining Qty</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.bom_line_ids" t-as="line">
+                                    <tr>
+                                        <td>
+                                            <span t-field="line.product_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="line.product_id.item_code"/>
+                                        </td>
+                                        <td class="number-cell">
+                                            <span t-field="line.quantity"/>
+                                        </td>
+                                        <td class="number-cell">
+                                            <span t-field="line.price"/>
+                                        </td>
+                                        <td class="number-cell">
+                                            <span t-field="line.total_price"/>
+                                        </td>
+                                        <td class="number-cell">
+                                            <span t-field="line.deducted_qty"/>
+                                        </td>
+                                        <td class="number-cell">
+                                            <span t-field="line.remaining_qty"/>
+                                        </td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+
+                        <!-- Footer Information -->
+                        <div class="footer-section">
+                            <div class="footer-info">
+                                <div class="footer-item">
+                                    <div class="footer-label">Generated By</div>
+                                    <div class="footer-value">
+                                        <span t-field="o.user"/>
+                                    </div>
+                                </div>
+                                <div class="footer-item">
+                                    <div class="footer-label">Generated On</div>
+                                    <div class="footer-value">
+                                        <span t-field="o.date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Notes Section -->
+                        <div t-if="o.notes" class="notes-section">
+                            <div class="notes-title">Notes:</div>
+                            <div class="notes-content">
+                                <span t-field="o.notes"/>
+                            </div>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+
+    <report 
+        id="action_report_bom"
+        model="inventory.boms"
+        string="BOM Report"
+        report_type="qweb-pdf"
+        name="inventory_auth.report_bom_template"
+        file="inventory_auth.report_bom_template"
+        attachment_use="False"
+        paperformat="paperformat_euro"
+    />
+</odoo>

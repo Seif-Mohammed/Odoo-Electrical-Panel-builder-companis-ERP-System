@@ -1,0 +1,521 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <!-- Project List View -->
+    <record id="view_technical_office_project_list" model="ir.ui.view">
+        <field name="name">technical.office.project.list</field>
+        <field name="model">technical.office.project</field>
+        <field name="arch" type="xml">
+            <list string="Technical Projects" class="to_project_list">
+                <field name="project_sn"/>
+                <field name="name" class="to_project_name"/>
+                <field name="client"/>
+                <field name="start_date"/>
+                <field name="due_date"/>
+                <field name="panel_count"/>
+                <field name="finished" class="to_status_field"/>
+            </list>
+        </field>
+    </record>  
+
+    <!-- Project Follow Up List View -->
+    <record id="view_technical_office_project_followup_list" model="ir.ui.view">
+        <field name="name">technical.office.project.followup.list</field>
+        <field name="model">technical.office.followup</field>
+        <field name="arch" type="xml">
+            <list string="Project Follow Up">
+                <field name="project_id"/>
+                <field name="panel_id"/>
+                <field name="product_id"/>
+                <field name="quantity_needed"/>
+            </list>
+        </field>
+    </record>
+    
+    <!-- Project Follow Up Form View -->
+    <record id="view_technical_office_project_followup_form" model="ir.ui.view">
+        <field name="name">technical.office.project.followup.form</field>
+        <field name="model">technical.office.followup</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="project_id"/>
+                        <field name="panel_id"/>
+                        <field name="product_id"/>
+                        <field name="quantity_needed" readonly="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Project Form View -->
+    <record id="view_technical_office_project_form" model="ir.ui.view">
+        <field name="name">technical.office.project.form</field>
+        <field name="model">technical.office.project</field>
+        <field name="arch" type="xml">
+            <form>
+                
+                <header class="to_header">
+                    <field name="finished" widget="boolean_toggle" class="to_status_toggle"/>
+                </header>
+                <sheet>
+                <widget name="web_ribbon" title="Finished" bg_color="text-bg-danger" invisible="not finished" />
+                    <div class="to_engineer_signature">Eng/Seif</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Project Name" class="to_title"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Basic Information" class="to_info_group">
+                            <field name="project_sn"/>
+                            <field name="version_no"/>
+                            <field name="brand"/>
+                            <field name="client"/>
+                            <field name="consultant"/>
+                            <field name="owner"/>
+                        </group>
+                        <group string="Project Team" class="to_team_group">
+                            <field name="tech_support"/>
+                            <field name="sales_eng"/>
+                            <field name="start_date"/>
+                            <field name="due_date"/>
+                            <field name="last_activated"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Financial Information" class="to_financial_group">
+                            <field name="adm_cost_factor"/>
+                            <field name="usd_factor"/>
+                            <field name="euro_factor"/>
+                            <field name="profit" class="to_price_field"/>
+                            <field name="financial_note"/>
+                        </group>
+                        <group string="Technical Specifications" class="to_tech_spec_group">
+                            <field name="bms"/>
+                            <field name="selectivity"/>
+                            <field name="current_density"/>
+                            <field name="project_folder" string="Project Folder" class="to_document_field"/>  
+                            <field name="tech_note"/>
+                        </group>
+                    </group>
+                    <notebook class="to_notebook">
+                        <page string="Panels" class="to_panels_page">
+                            <div class="oe_button_box" name="product_button_box">
+                                <button name="action_open_project_panel_form" string="Add New Panel" type="object" 
+                                        class="oe_highlight to_add_button" 
+                                        icon="fa-plus-square"/>
+                            </div>
+                            <field name="panel_ids" readonly="1">
+                                <list class="to_panel_list">
+                                    <field name="sn"/>
+                                    <field name="name" class="to_panel_name"/>
+                                    <field name="enclosure_type"/>
+                                    <field name="width"/>
+                                    <field name="height"/>
+                                    <field name="depth"/>
+                                    <field name="start_manufacturing_date"/>
+                                    <field name="closed" class="to_status_field"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" class="to_notes_page">
+                            <field name="hidden_note" class="to_notes_field"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" invisible="1"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <!-- Project Panel Form View -->
+    <record id="view_technical_office_project_panel_form" model="ir.ui.view">
+        <field name="name">technical.office.project.panel.form</field>
+        <field name="model">technical.office.project.panel</field>
+        <field name="arch" type="xml">
+            <form>
+                <!-- Add phase tracking section after title -->
+                <div class="oe_title" position="after">
+                    <div class="alert alert-info" role="alert">
+                        <div class="row">
+                            <div class="col-6">
+                                <strong>Current Phase: </strong><field name="phase" readonly="1"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Progress: </strong><field name="progress_percentage" readonly="1"/>%
+                            </div>
+                        </div>
+                        <div class="progress mt-2">
+                            <div class="progress-bar progress-bar-striped" role="progressbar" 
+                                style="width: {progress_percentage}%">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+        
+                <!-- Add phase control buttons in header -->
+                <header position="inside">
+                    <button name="action_previous_phase" string="← Previous Phase" type="object" 
+                            class="btn-secondary" 
+                            invisible="[('phase', '=', 'studying')]"/>
+                    <button name="action_advance_phase" string="Next Phase →" type="object" 
+                            class="btn-primary" 
+                            invisible="[('phase', '=', 'completed')]"/>
+                    <field name="phase" widget="statusbar" 
+                        statusbar_visible="studying,waiting_approval,manufacture_queue,bend_phase,painting,assembly,copper_formation,classic_control,quality_control,to_be_exported,completed"/>
+                </header>
+                
+                <sheet>
+                <widget name="web_ribbon" title="Finished" bg_color="text-bg-danger" invisible="phase != 'completed'" />
+                    <div class="to_engineer_signature">Eng/Seif</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Panel Name" class="to_title"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Basic Information" class="to_info_group">
+                            <field name="project_id"/>
+                            <field name="sn"/>
+                            <field name="enclosure_type"/>
+                            <field name="form_type"/>
+                            <field name="painting_color"/>
+                        </group>
+                        <group string="Dimensions" class="to_dimensions_group">
+                            <field name="width"/>
+                            <field name="height"/>
+                            <field name="depth"/>
+                            <field name="sheet_thickness"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Options" class="to_options_group">
+                            <field name="with_canopy"/>
+                            <field name="with_steel_base"/>
+                            <field name="used_aluminum_cables"/>
+                            <field name="supply_from"/>
+                        </group>
+                        <group string="Connection Points" class="to_connection_group">
+                            <field name="incoming"/>
+                            <field name="outgoing"/>
+                            <field name="access_from"/>
+                            <field name="ip_rating"/>
+                            <field name="ik_rating"/>
+                        </group>
+                    </group>
+                    <group>
+                        <group string="Technical Specifications" class="to_tech_spec_group">
+                            <field name="cb_spaces"/>
+                            <field name="busbar_material"/>
+                            <field name="busbar_configuration"/>
+                            <field name="busbar_coated"/>
+                            <field name="busbar_current_density"/>
+                            <field name="earth_system"/>
+                        </group>
+                        <group string="Manufacturing Status" class="to_manufacturing_group">
+                            <field name="start_manufacturing_date"/>
+                            <field name="finished_manufacturing_date"/>
+                            <field name="exit_manufacturing_date"/>
+                            <field name="closed" class="to_status_field"/>
+                            <field name="version"/>
+                        </group>
+                    </group>
+                    <group string="Documentation" class="to_documentation_group">
+                        <field name="enclosure_datasheet" widget="binary" class="to_document_field"/>
+                        <field name="panel_shop_drawing" widget="binary" class="to_document_field"/>
+                    </group>
+                    <notebook class="to_notebook">
+                        <!-- Make "Cells" page visible only for panels that can have cells -->
+                        <page string="Cells" class="to_cells_page" >
+                            <field name="cell_ids">
+                                <list class="to_cell_list">
+                                    <field name="sn"/>
+                                    <field name="name" class="to_cell_name"/>
+                                    <field name="section"/>
+                                    <field name="width"/>
+                                    <field name="height"/>
+                                    <field name="depth"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Financial" class="to_financial_page">
+                            <group>
+                                <field name="panel_unit_price" class="to_price_field"/>
+                                <field name="panel_cost" class="to_cost_field"/>
+                                <field name="parts_note" class="to_notes_field"/>
+                            </group>
+                        </page>
+                        <page string="BOM" class="to_BOM_page">
+                            <div class="oe_button_box" name="product_button_box">
+                                <button name="action_open_project_panel_bom_form" string="Add New Component" type="object" 
+                                        class="oe_highlight to_add_button" 
+                                        icon="fa-plus-square"/>
+                            </div>
+                            <field name="bom_ids">
+                                <list class="to_component_list" readonly="1">
+                                    <field name="product_id" class="to_component_name"/>
+                                    <field name="installed_qty" class="to_quantity_group"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" class="to_notes_page">
+                            <group class="to_notes_group">
+                                <field name="note" class="to_notes_field"/>
+                                <field name="packing_note" class="to_notes_field"/>
+                                <field name="hidden_note" class="to_notes_field"/>
+                                <field name="approval_note" class="to_notes_field"/>
+                            </group>
+                        </page>
+                        <!-- Add Phase History tab -->
+                        <page string="Phase Tracking" class="to_phase_tracking_page">
+                            <group>
+                                <group string="Current Phase Info">
+                                    <field name="phase"/>
+                                    <field name="phase_start_date"/>
+                                    <field name="progress_percentage"/>
+                                </group>
+                                <group string="Duration Summary">
+                                    <field name="total_duration" readonly="1"/>
+                                    <field name="studying_duration" readonly="1"/>
+                                    <field name="waiting_approval_duration" readonly="1"/>
+                                    <field name="manufacture_queue_duration" readonly="1"/>
+                                </group>
+                            </group>
+                            <separator string="Phase History"/>
+                            <field name="phase_history_ids" readonly="1">
+                                <list>
+                                    <field name="phase"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="duration"/>
+                                    <field name="user_id"/>
+                                    <field name="notes"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" invisible="1"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Panel Cell Form View -->
+    <record id="view_technical_office_project_cell_form" model="ir.ui.view">
+        <field name="name">technical.office.project.cell.form</field>
+        <field name="model">technical.office.project.cell</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="to_engineer_signature">Eng/Seif</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Cell Name" class="to_title"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Basic Information" class="to_info_group">
+                            <!-- Add domain to only show panels that can have cells -->
+                            <field name="name" class="to_cell_name"/>
+                            <field name="sn"/>
+                            <field name="section"/>
+                        </group>
+                        <group string="Dimensions" class="to_dimensions_group">
+                            <field name="width"/>
+                            <field name="height"/>
+                            <field name="depth"/>
+                            <field name="two_part_door"/>
+                            <field name="no_of_sides"/>
+                        </group>
+                    </group>
+                    <group string="Connection Points" class="to_connection_group">
+                        <field name="incoming_from"/>
+                        <field name="outgoing_from"/>
+                        <field name="access_from"/>
+                    </group>
+                    <notebook class="to_notebook">
+                        <page string="Notes" class="to_notes_page">
+                            <field name="note" class="to_notes_field"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Panel Dashboard Kanban View -->
+    <record id="view_panel_dashboard_kanban" model="ir.ui.view">
+        <field name="name">technical.office.panel.dashboard.kanban</field>
+        <field name="model">technical.office.project.panel</field>
+        <field name="arch" type="xml">
+            <kanban class="o_kanban_dashboard" create="false" group_create="false" group_delete="false">
+                <field name="phase"/>
+                <field name="name"/>
+                <field name="project_id"/>
+                <field name="progress_percentage"/>
+                <field name="phase_start_date"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card oe_kanban_global_click">
+                            <div class="oe_kanban_content">
+                                <div class="row">
+                                    <div class="col-8">
+                                        <strong><field name="name"/></strong>
+                                        <br/>
+                                        <span class="text-muted"><field name="project_id"/></span>
+                                    </div>
+                                    <div class="col-4 text-right">
+                                        <span class="badge badge-info">
+                                            <field name="progress_percentage"/>%
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-12">
+                                        <div class="progress">
+                                            <div class="progress-bar" role="progressbar" 
+                                                 t-att-style="'width: ' + record.progress_percentage.raw_value + '%'">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row mt-2">
+                                    <div class="col-12 text-muted small">
+                                        Started: <field name="phase_start_date"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    
+    <!-- Panel Phase History List View -->
+    <record id="view_panel_phase_history_list" model="ir.ui.view">
+        <field name="name">technical.office.panel.phase.history.list</field>
+        <field name="model">technical.office.panel.phase.history</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="panel_id"/>
+                <field name="project_id"/>
+                <field name="phase"/>
+                <field name="start_date"/>
+                <field name="end_date"/>
+                <field name="duration"/>
+                <field name="user_id"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Panel Phase History Form View -->
+    <record id="view_panel_phase_history_form" model="ir.ui.view">
+        <field name="name">technical.office.panel.phase.history.form</field>
+        <field name="model">technical.office.panel.phase.history</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="panel_id"/>
+                        <field name="phase"/>
+                        <field name="start_date"/>
+                        <field name="end_date"/>
+                        <field name="duration" readonly="1"/>
+                        <field name="user_id"/>
+                    </group>
+                    <field name="notes"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Dashboard Pivot View -->
+    <record id="view_panel_dashboard_pivot" model="ir.ui.view">
+        <field name="name">technical.office.project.panel.pivot</field>
+        <field name="model">technical.office.project.panel</field>
+        <field name="arch" type="xml">
+            <pivot string="Panel Phase Analysis">
+                <field name="phase" type="row"/>
+                <field name="project_id" type="col"/>
+                <field name="progress_percentage" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+
+    <!-- Dashboard Graph View -->
+    <record id="view_panel_dashboard_graph" model="ir.ui.view">
+        <field name="name">technical.office.project.panel.graph</field>
+        <field name="model">technical.office.project.panel</field>
+        <field name="arch" type="xml">
+            <graph string="Panel Phase Distribution" type="pie">
+                <field name="phase"/>
+            </graph>
+        </field>
+    </record>
+
+
+
+    <!-- Actions -->
+    <record id="action_technical_office_project" model="ir.actions.act_window">
+        <field name="name">Technical Office Projects</field>
+        <field name="res_model">technical.office.project</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_technical_office_project_list"/>
+    </record>
+    
+    <record id="action_technical_office_project_panel" model="ir.actions.act_window">
+        <field name="name">Panels</field>
+        <field name="res_model">technical.office.project.panel</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+    <record id="action_technical_office_project_followup" model="ir.actions.act_window">
+        <field name="name">Project Follow Up</field>
+        <field name="res_model">technical.office.followup</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_technical_office_project_followup_list"/>
+    </record>
+
+    <record id="action_panel_dashboard" model="ir.actions.act_window">
+        <field name="name">Panel Phase Dashboard</field>
+        <field name="res_model">technical.office.project.panel</field>
+        <field name="view_mode">kanban,list,form,pivot,graph</field>
+        <field name="view_id" ref="view_panel_dashboard_kanban"/>
+        <field name="context">{'group_by': 'phase'}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Track your panel phases!
+            </p>
+            <p>
+                Monitor the progress of all panels through their manufacturing phases.
+            </p>
+        </field>
+    </record>
+
+    <record id="action_panel_phase_history" model="ir.actions.act_window">
+        <field name="name">Panel Phase History</field>
+        <field name="res_model">technical.office.panel.phase.history</field>
+        <field name="view_mode">list,form</field>
+    </record>
+
+
+    <!-- Menu items -->
+    <menuitem id="menu_technical_office_project" name="Technical Office" action="action_technical_office_project" parent="menu_technical_office"/>
+    <menuitem id="menu_technical_office_project_panel" name="Project Panels" action="action_technical_office_project_panel" parent="menu_technical_office" />
+    <menuitem id="menu_technical_office_project_followup" name="Follow Up" action="action_technical_office_project_followup" parent="menu_technical_office"/>
+    <menuitem id="menu_panel_dashboard" name="Panel Dashboard" action="action_panel_dashboard" parent="menu_technical_office" sequence="1"/>
+    <menuitem id="menu_panel_phase_history" name="Phase History" action="action_panel_phase_history" parent="menu_technical_office" sequence="10"/>
+
+</odoo>

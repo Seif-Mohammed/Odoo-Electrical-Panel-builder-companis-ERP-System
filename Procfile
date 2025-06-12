@@ -1,0 +1,1 @@
+web: python -m odoo --addons-path=addons --http-port=$PORT --database=$DATABASE_URL --db_host=$PGHOST --db_port=$PGPORT --db_user=$PGUSER --db_password=$PGPASSWORD --db_name=$PGDATABASE --without-demo=all --load-language=en_US

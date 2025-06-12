@@ -1,0 +1,737 @@
+/* Technical Office Module Custom Styling by Eng/Seif - Enhanced Version */
+
+/* Color Variables */
+:root {
+    --to-primary: #1a73e8;
+    --to-secondary: #34a853;
+    --to-accent: #ea4335;
+    --to-light: #f5f7fa;
+    --to-dark: #2c3e50;
+    --to-border: #dfe3e8;
+    --to-hover: rgba(26, 115, 232, 0.1);
+    --to-completed: #34a853;
+    --to-pending: #fbbc05;
+    --to-text: #333;
+    --to-shadow: rgba(0, 0, 0, 0.1);
+    --to-gradient-start: #1a73e8;
+    --to-gradient-end: #34a853;
+}
+
+/* Engineer Signature */
+.to_engineer_signature {
+    position: absolute;
+    top: 15px;
+    right: 30px;
+    background: linear-gradient(135deg, var(--to-gradient-start), var(--to-gradient-end));
+    color: white;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 3px 10px var(--to-shadow);
+    opacity: 0.35;
+    z-index: 100;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9em;
+
+}
+
+.to_engineer_signature:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Title styling */
+.to_title {
+    color: var(--to-primary);
+    font-size: 1.8em;
+    font-weight: 700;
+    position: relative;
+    padding-bottom: 8px;
+}
+
+.to_title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, var(--to-primary), var(--to-secondary));
+    border-radius: 3px;
+}
+
+/* Header styling */
+.to_header {
+    border-bottom: none;
+    position: relative;
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+.to_header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(to right, var(--to-primary), var(--to-secondary), var(--to-accent));
+    border-radius: 2px;
+}
+
+/* List view styling */
+.to_project_list, .to_panel_list, .to_cell_list, .to_component_list {
+    table-layout: auto !important; /* Allow columns to adjust dynamically */
+    /* reduce table width  */
+    width: 100% !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    border-radius: 8px !important;
+    overflow-x: auto !important; /* Enable horizontal scrolling if needed */
+    box-shadow: 0 4px 15px var(--to-shadow) !important;
+}
+.to_project_list td:last-child, .to_panel_list td:last-child,
+.to_cell_list td:last-child, .to_component_list td:last-child {
+    white-space: nowrap; /* Prevent text wrapping in the last column */
+    overflow: hidden; /* Hide overflow if content exceeds the cell width */
+    text-overflow: ellipsis; /* Add ellipsis for overflowing text */
+}
+.to_project_list tr:hover, .to_panel_list tr:hover, 
+.to_cell_list tr:hover, .to_component_list tr:hover {
+    background-color: var(--to-hover);
+    transform: translateY(-1px);
+    transition: all 0.2s ease;
+}
+
+.to_project_list th, .to_panel_list th, 
+.to_cell_list th, .to_component_list th {
+    border: none !important;
+    border-bottom: 2px solid var(--to-primary) !important;
+    text-align: left !important;
+    
+    padding: 12px 8px !important;
+    background: linear-gradient(to bottom, #f9f9f9, #f5f5f5) !important;
+    font-weight: 600 !important;
+    color: var(--to-dark) !important;
+    text-transform: uppercase !important;
+    font-size: 0.85em !important;
+    letter-spacing: 0.5px !important;
+    /* Ensure column headers show full text */
+    white-space: nowrap !important;
+    overflow: visible !important;
+    text-overflow: initial !important;
+    min-width: max-content !important;
+    width: auto !important;
+    position: relative !important;
+}
+
+/* Force column headers to be fully visible with tooltip on hover for very long names */
+.to_project_list th:hover, .to_panel_list th:hover, 
+.to_cell_list th:hover, .to_component_list th:hover {
+    z-index: 999 !important;
+    background: linear-gradient(to bottom, #e8f0fe, #d2e3fc) !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15) !important;
+    border-radius: 4px !important;
+}
+
+/* Override any width constraints on header columns */
+.to_project_list thead tr th, .to_panel_list thead tr th,
+.to_cell_list thead tr th, .to_component_list thead tr th {
+    max-width: none !important;
+    width: auto !important;
+    min-width: fit-content !important;
+}
+
+.to_project_list td, .to_panel_list td,
+.to_cell_list td, .to_component_list td {
+    padding: 10px 8px !important;
+    border: none !important;
+    border-bottom: 1px solid #eaeaea !important;
+    vertical-align: middle !important;
+    transition: all 0.2s ease !important;
+}
+
+.to_project_list tr:last-child td, 
+.to_panel_list tr:last-child td,
+.to_cell_list tr:last-child td,
+.to_component_list tr:last-child td {
+    border-bottom: none !important;
+}
+
+.to_project_list thead > tr > th:nth-child(1),
+.to_panel_list thead > tr > th:nth-child(1) {
+    width: 30px !important;
+    min-width: 30px !important;
+    max-width: 30px !important;
+    text-align: center !important;
+    padding: 8px 4px !important;
+}
+
+.to_project_name, .to_panel_name, .to_cell_name, .to_component_name {
+    font-weight: 700;
+    color: var(--to-primary);
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.to_project_name:hover, .to_panel_name:hover, 
+.to_cell_name:hover, .to_component_name:hover {
+    color: var(--to-secondary);
+}
+
+/* Status field styling */
+.to_status_field.o_boolean_toggle input:checked + .slider {
+    background-color: var(--to-completed);
+    box-shadow: 0 0 8px rgba(52, 168, 83, 0.5);
+}
+
+.to_status_field.o_boolean_toggle input:not(:checked) + .slider {
+    background-color: var(--to-pending);
+    box-shadow: 0 0 8px rgba(251, 188, 5, 0.5);
+}
+
+.to_status_toggle .o_field_boolean input:checked + span::before {
+    background-color: var(--to-completed);
+    box-shadow: 0 0 8px rgba(52, 168, 83, 0.5);
+}
+
+/* Group styling */
+.to_info_group, .to_team_group, .to_financial_group, .to_tech_spec_group,
+.to_dimensions_group, .to_options_group, .to_connection_group,
+.to_manufacturing_group, .to_documentation_group, .to_pricing_group,
+.to_quantity_group, .to_notes_group {
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 0px;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.to_info_group:hover, .to_team_group:hover, .to_financial_group:hover, 
+.to_tech_spec_group:hover, .to_dimensions_group:hover, .to_options_group:hover, 
+.to_connection_group:hover, .to_manufacturing_group:hover, 
+.to_documentation_group:hover, .to_pricing_group:hover,
+.to_quantity_group:hover, .to_notes_group:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    transform: translateY(-2px);
+}
+
+/* Custom group coloring */
+.to_info_group {
+    border-left: 5px solid var(--to-primary);
+}
+
+.to_info_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--to-primary), transparent);
+}
+
+.to_team_group {
+    border-left: 5px solid var(--to-secondary);
+}
+
+.to_team_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--to-secondary), transparent);
+}
+
+.to_financial_group, .to_financial_page {
+    border-left: 5px solid var(--to-accent);
+}
+
+.to_financial_group::before, .to_financial_page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--to-accent), transparent);
+}
+
+.to_tech_spec_group {
+    border-left: 5px solid var(--to-dark);
+}
+
+.to_tech_spec_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, var(--to-dark), transparent);
+}
+
+.to_dimensions_group {
+    border-left: 5px solid #9c27b0;
+}
+
+.to_dimensions_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #9c27b0, transparent);
+}
+
+.to_connection_group {
+    border-left: 5px solid #ff9800;
+}
+
+.to_connection_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #ff9800, transparent);
+}
+
+.to_manufacturing_group {
+    border-left: 5px solid #607d8b;
+}
+
+.to_manufacturing_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #607d8b, transparent);
+}
+
+.to_documentation_group {
+    border-left: 5px solid #795548;
+}
+
+.to_documentation_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #795548, transparent);
+}
+
+.to_options_group {
+    border-left: 5px solid #00bcd4;
+}
+
+.to_options_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #00bcd4, transparent);
+}
+
+.to_pricing_group {
+    border-left: 5px solid #f44336;
+}
+
+.to_pricing_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #f44336, transparent);
+}
+
+.to_quantity_group {
+    border-left: 5px solid #8bc34a;
+}
+
+.to_quantity_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #8bc34a, transparent);
+}
+
+.to_notes_group {
+    border-left: 5px solid #9e9e9e;
+}
+
+.to_notes_group::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(to right, #9e9e9e, transparent);
+}
+
+/* Group title styling */
+.o_form_sheet_bg .o_form_sheet .o_group > .o_group_col_6:first-child, 
+.o_form_sheet_bg .o_form_sheet .o_group > .o_group_col_6 {
+    position: relative;
+}
+
+.o_form_sheet_bg .o_form_sheet .o_group .o_horizontal_separator {
+    color: var(--to-dark);
+    font-size: 1.1em;
+    font-weight: 600;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.o_form_sheet_bg .o_form_sheet .o_group .o_horizontal_separator::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(to right, var(--to-primary), var(--to-secondary));
+    border-radius: 3px;
+}
+
+/* Improve labels */
+.to_info_group .o_form_label, .to_team_group .o_form_label,
+.to_financial_group .o_form_label, .to_tech_spec_group .o_form_label,
+.to_dimensions_group .o_form_label, .to_options_group .o_form_label, 
+.to_connection_group .o_form_label, .to_manufacturing_group .o_form_label,
+.to_documentation_group .o_form_label, .to_pricing_group .o_form_label,
+.to_quantity_group .o_form_label, .to_notes_group .o_form_label {
+    font-weight: 600;
+    color: var(--to-dark);
+    font-size: 0.95em;
+    margin-bottom: 5px;
+    display: block;
+}
+
+/* Field input styling */
+.o_form_view .o_form_sheet .o_group .o_field_widget input, 
+.o_form_view .o_form_sheet .o_group .o_field_widget select {
+    border: 1px solid var(--to-border);
+    border-radius: 6px;
+    padding: 8px 12px;
+    transition: all 0.3s ease;
+}
+
+.o_form_view .o_form_sheet .o_group .o_field_widget input:focus,
+.o_form_view .o_form_sheet .o_group .o_field_widget select:focus {
+    border-color: var(--to-primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+    outline: none;
+}
+
+/* Button styling */
+.to_add_button {
+    background: linear-gradient(to right, var(--to-secondary), #2d9747);
+    border: none;
+    color: white;
+    border-radius: 6px;
+    padding: 8px 16px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 8px rgba(52, 168, 83, 0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9em;
+}
+
+.to_add_button:hover {
+    background: linear-gradient(to right, #2d9747, var(--to-secondary));
+    box-shadow: 0 5px 15px rgba(52, 168, 83, 0.4);
+    transform: translateY(-3px);
+}
+
+.to_add_button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 5px rgba(52, 168, 83, 0.3);
+}
+
+.to_add_button i.fa {
+    margin-right: 8px;
+}
+
+/* Notebook styling */
+.to_notebook {
+    margin-top: 30px;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.to_notebook .nav-tabs {
+    border-bottom: none;
+    background-color: #f9f9f9;
+    padding: 0 15px;
+}
+
+.to_notebook .nav-tabs .nav-link {
+    border: none;
+    border-bottom: 3px solid transparent;
+    margin-bottom: 0;
+    color: var(--to-text);
+    font-weight: 600;
+    padding: 15px 20px;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.to_notebook .nav-tabs .nav-link.active {
+    border-bottom: 3px solid var(--to-primary);
+    color: var(--to-primary);
+    background-color: transparent;
+}
+
+.to_notebook .nav-tabs .nav-link:hover:not(.active) {
+    border-bottom: 3px solid rgba(166, 196, 240, 0.7);
+    color: var(--to-primary);
+    background-color: rgba(245, 247, 250, 0.5);
+}
+
+.to_notebook .tab-content {
+    padding: 20px;
+    background-color: white;
+}
+
+/* Page-specific styling */
+.to_panels_page, .to_cells_page, .to_components_page, .to_BOM_page {
+    padding-top: 15px;
+}
+
+.to_notes_page textarea, .to_notes_field textarea {
+    min-height: 150px;
+    border-radius: 8px;
+    padding: 12px;
+    border: 1px solid var(--to-border);
+    transition: all 0.3s ease;
+    font-family: inherit;
+    font-size: 0.95em;
+    line-height: 1.5;
+    resize: vertical;
+}
+
+.to_notes_page textarea:focus, .to_notes_field textarea:focus {
+    border-color: var(--to-primary);
+    box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.15);
+    outline: none;
+}
+
+/* Financial fields styling */
+.to_price_field, .to_cost_field, .to_total_price_field {
+    font-weight: 600;
+    color: var(--to-accent);
+    font-size: 1.05em;
+    position: relative;
+}
+
+.to_price_field input, .to_cost_field input, .to_total_price_field input {
+    transition: all 0.3s ease;
+}
+
+.to_price_field input:focus, .to_cost_field input:focus, .to_total_price_field input:focus {
+    transform: scale(1.02);
+}
+
+.to_total_price_field {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+/* Document fields */
+.to_document_field {
+    margin-bottom: 15px;
+}
+
+.to_document_field .o_input_file {
+    background-color: var(--to-light);
+    border: 1px solid var(--to-border);
+    border-radius: 6px;
+    padding: 10px 15px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+}
+
+.to_document_field .o_input_file:hover {
+    background-color: rgba(26, 115, 232, 0.1);
+    border-color: var(--to-primary);
+}
+
+.to_document_field .o_input_file:active {
+    background-color: rgba(26, 115, 232, 0.2);
+}
+
+/* Alert styling */
+.alert-info {
+    background-color: rgba(26, 115, 232, 0.1);
+    border-left: 5px solid var(--to-primary);
+    color: var(--to-dark);
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.alert-info p {
+    margin-bottom: 10px;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 767.98px) {
+    .to_engineer_signature {
+        position: relative;
+        top: 0;
+        right: 0;
+        display: block;
+        width: fit-content;
+        margin: 15px 0;
+    }
+    
+    .to_info_group, .to_team_group, .to_financial_group, .to_tech_spec_group,
+    .to_dimensions_group, .to_options_group, .to_connection_group,
+    .to_manufacturing_group, .to_documentation_group, .to_pricing_group,
+    .to_quantity_group, .to_notes_group {
+        padding: 15px;
+        margin-bottom: 15px;
+    }
+    
+    .to_notebook .nav-tabs .nav-link {
+        padding: 10px 15px;
+        font-size: 0.85em;
+    }
+    
+    .to_title {
+        font-size: 1.5em;
+    }
+    
+    .o_form_sheet_bg .o_form_sheet .o_group .o_horizontal_separator {
+        font-size: 1em;
+    }
+    
+    /* Make sure column headers are still visible on mobile */
+    .to_project_list th, .to_panel_list th, 
+    .to_cell_list th, .to_component_list th {
+        font-size: 0.75em !important;
+        padding: 8px 4px !important;
+        white-space: nowrap !important;
+        min-width: max-content !important;
+    }
+}
+.o_kanban_dashboard {
+    background: #f8f9fa;
+}
+
+.o_kanban_dashboard .oe_kanban_card {
+    margin: 5px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.o_kanban_dashboard .oe_kanban_card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+/* Phase-specific colors */
+.o_kanban_dashboard .oe_kanban_card[data-phase="studying"] {
+    border-left: 4px solid #6f42c1;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="waiting_approval"] {
+    border-left: 4px solid #fd7e14;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="manufacture_queue"] {
+    border-left: 4px solid #ffc107;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="bend_phase"] {
+    border-left: 4px solid #20c997;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="painting"] {
+    border-left: 4px solid #17a2b8;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="assembly"] {
+    border-left: 4px solid #007bff;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="copper_formation"] {
+    border-left: 4px solid #dc3545;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="classic_control"] {
+    border-left: 4px solid #e83e8c;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="quality_control"] {
+    border-left: 4px solid #6610f2;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="to_be_exported"] {
+    border-left: 4px solid #28a745;
+}
+
+.o_kanban_dashboard .oe_kanban_card[data-phase="completed"] {
+    border-left: 4px solid #198754;
+    background: #d4edda;
+}
+
+.to_phase_tracking_page .progress {
+    height: 20px;
+    border-radius: 10px;
+}
+
+.to_phase_tracking_page .progress-bar {
+    background: linear-gradient(45deg, #007bff, #28a745);
+    border-radius: 10px;
+}
+
+/* Kanban group headers styling */
+.o_kanban_group_title {
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Phase status badges */
+.badge-phase-studying { background-color: #6f42c1; }
+.badge-phase-waiting-approval { background-color: #fd7e14; }
+.badge-phase-manufacture-queue { background-color: #ffc107; color: #212529; }
+.badge-phase-bend-phase { background-color: #20c997; }
+.badge-phase-painting { background-color: #17a2b8; }
+.badge-phase-assembly { background-color: #007bff; }
+.badge-phase-copper-formation { background-color: #dc3545; }
+.badge-phase-classic-control { background-color: #e83e8c; }
+.badge-phase-quality-control { background-color: #6610f2; }
+.badge-phase-to-be-exported { background-color: #28a745; }
+.badge-phase-completed { background-color: #198754; }

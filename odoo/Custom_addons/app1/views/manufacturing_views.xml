@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Manufacturing Drawing Download Form View -->
+    <record id="view_manufacturing_drawing_download_form" model="ir.ui.view">
+        <field name="name">manufacturing.drawing.download.form</field>
+        <field name="model">manufacturing.drawing.download</field>
+        <field name="arch" type="xml">
+            <form string="Download Manufacturing Drawing">
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Manufacturing Drawing Download</h1>
+                        <p>Select a project and panel to download the corresponding .dwg drawing file</p>
+                    </div>
+                    
+                    <group>
+                        <group name="selection">
+                            <field name="project_id" 
+                                   options="{'no_create': True, 'no_open': True}"
+                                   placeholder="Select a project..."/>
+                            <field name="panel_id" 
+                                   options="{'no_create': True, 'no_open': True}"
+                                   placeholder="Select a panel..."
+                                   />
+                        </group>
+                        
+                        <group name="file_info" >
+                            <field name="drawing_file_name" readonly="1"/>
+                            <field name="file_exists" readonly="1"/>
+                        </group>
+                    </group>
+                    
+                    <notebook >
+                        <page string="Panel Information">
+                            <group>
+                                <field name="panel_info" nolabel="1" readonly="1" 
+                                       widget="text" 
+                                       style="white-space: pre-line; font-family: monospace;"/>
+                            </group>
+                        </page>
+                    </notebook>
+                    
+                    <!-- Status indicators -->
+                    <div class="alert alert-success" 
+                         invisible="not file_exists">
+                        <strong>✓ Drawing file is available for download</strong>
+                    </div>
+                    
+                    <div class="alert alert-warning" 
+                         invisible="file_exists">
+                        <strong>⚠ Drawing file not found</strong>
+                        <p>The drawing file for this panel configuration is not available in the drawings directory.</p>
+                    </div>
+                </sheet>
+                
+                <footer>
+                    <button name="action_download_drawing" 
+                            string="Download Drawing" 
+                            type="object" 
+                            class="btn-primary"
+                            />
+                    
+                    <button name="action_view_panel_details" 
+                            string="View Panel Details" 
+                            type="object" 
+                            class="btn-secondary"/>
+                    
+                    <!-- NEW: Busbar Calculator Button -->
+                    <button name="action_open_busbar_calculator" 
+                            string="🔨 Busbar Calculator" 
+                            type="object" 
+                            class="btn-secondary"
+                            help="Open Copper Busbar Bending Calculator"/>
+                    
+                    <button string="Cancel" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <!-- Manufacturing Drawing Configuration Form View -->
+    <record id="view_manufacturing_drawing_config_form" model="ir.ui.view">
+        <field name="name">manufacturing.drawing.config.form</field>
+        <field name="model">manufacturing.drawing.config</field>
+        <field name="arch" type="xml">
+            <form string="Manufacturing Drawing Configuration" class="oe_form_configuration">
+                <header>
+                    <button name="action_test_directory" 
+                            string="Test Directory" 
+                            type="object" 
+                            class="btn-secondary"/>
+                    <button name="action_list_drawings" 
+                            string="List Available Drawings" 
+                            type="object" 
+                            class="btn-secondary"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Manufacturing Drawing Settings</h1>
+                    </div>
+                    
+                    <group>
+                        <group name="directory_settings">
+                            <label for="drawing_directory"/>
+                            <div class="o_row">
+                                <field name="drawing_directory" placeholder="/path/to/drawings/directory"/>
+                            </div>
+                        </group>
+                        
+                        <!-- NEW: Busbar Calculator Directory Setting -->
+                        <group name="calculator_settings">
+                            <label for="busbar_calculator_path"/>
+                            <div class="o_row">
+                                <field name="busbar_calculator_path" placeholder="/path/to/copper_busbar_calculator.html"/>
+                            </div>
+                        </group>
+                    </group>
+                    
+                    <div class="alert alert-info">
+                        <h4>Drawing File Naming Convention</h4>
+                        <p>Drawing files should be named using the following pattern:</p>
+                        <code>{enclosure_type}_{width}x{height}x{depth}.dwg</code>
+                        <br/><br/>
+                        <strong>Examples:</strong>
+                        <ul>
+                            <li><code>A01_800x2000x400.dwg</code> - Chint-lectro EnergiX-M, 800×2000×400mm</li>
+                            <li><code>A02_600x1800x300.dwg</code> - Chint-lectro EnergiX-S, 600×1800×300mm</li>
+                            <li><code>A03_1000x2200x500.dwg</code> - Chint-lectro EnergiX-F, 1000×2200×500mm</li>
+                            <li><code>A04_1200x2400x600.dwg</code> - Lectro, 1200×2400×600mm</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- NEW: Busbar Calculator Info -->
+                    <div class="alert alert-success">
+                        <h4>🔨 Busbar Calculator Integration</h4>
+                        <p>Configure the path to your Copper Busbar Calculator HTML file to enable the calculator button in manufacturing forms.</p>
+                        <p><strong>Default Path:</strong> /home/user/copper_busbar_calculator.html</p>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    
+
+    <!-- Configuration Action -->
+    <record id="action_manufacturing_drawing_config" model="ir.actions.act_window">
+        <field name="name">Drawing Configuration</field>
+        <field name="res_model">manufacturing.drawing.config</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!-- Download Drawing Action -->
+    <record id="action_manufacturing_drawing_download" model="ir.actions.act_window">
+        <field name="name">Download Drawing</field>
+        <field name="res_model">manufacturing.drawing.download</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="context">{}</field>
+    </record>
+
+    <!-- ...existing code... -->
+    <record id="action_busbar_calculator" model="ir.actions.act_url">
+        <field name="name">Copper Busbar Calculator</field>
+        <field name="url">/app1/static/src/http/copper_busbar_calculator.html</field>
+        <field name="target">new</field>
+    </record>
+
+
+    <!-- Manufacturing Menu Item -->
+    <menuitem id="menu_manufacturingg" name="Manufacturing"/>
+
+    <!-- Download Drawing Menu Item -->
+    <menuitem id="menu_manufacturing_drawing_download" name="Download Drawing" parent="menu_manufacturingg" 
+    action="action_manufacturing_drawing_download"/>
+
+    <!-- Configuration Menu Item -->
+    <menuitem id="menu_manufacturing_drawing_config" name="Drawing Configuration" parent="menu_manufacturingg" 
+    action="action_manufacturing_drawing_config"/>
+
+    <!-- Busbar Calculator Menu Item -->
+    <menuitem id="menu_busbar_calculator" name="🔨 Busbar Calculator" action="action_busbar_calculator" 
+    parent="menu_manufacturingg"/>
+    
+
+</odoo>

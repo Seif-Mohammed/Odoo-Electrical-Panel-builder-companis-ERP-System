@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+
+    <record id="view_inventory_auth_list" model="ir.ui.view">
+        <field name="name">inventory.auth.list</field>
+        <field name="model">inventory.auth</field>
+        <field name="arch" type="xml">
+            <list class="to_project_list">
+                <field name="name" class="to_project_name"/>
+                <field name="type"/>
+                <field name="date"/>
+                <field name="requested_by"/>
+                <field name="approved_by"/>
+                <field name="state" class="to_status_field"/>
+            </list>
+        </field>
+    </record>
+
+
+    <!-- Product List View -->
+    <record id="view_inventory_product_list" model="ir.ui.view">
+        <field name="name">inventory.product.list</field>
+        <field name="model">inventory.product</field>
+        <field name="arch" type="xml">
+            <list class="to_component_list">
+                <field name="name" class="to_component_name"/>
+                <field name="sn"/>
+                <field name="brand"/>
+                <field name="category"/>
+                <field name="current_stock_qty"/>
+                <field name="price" class="to_price_field"/>
+                <field name="currency"/>
+            </list>
+        </field>
+    </record>
+
+<!-- BOM List View -->
+    <record id="view_inventory_boms_list" model="ir.ui.view">
+        <field name="name">inventory.boms.list</field>
+        <field name="model">inventory.boms</field>
+        <field name="arch" type="xml">
+            <list class="to_component_list">
+                <field name="project_id"/>
+                <field name="panel_id"/>
+                <field name="has_bom" widget="boolean_toggle"/>
+                <field name="numbers_of_panels"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- BOM Line List View -->
+    <record id="view_inventory_boms_list" model="ir.ui.view">
+        <field name="name">inventory.boms.list</field>
+        <field name="model">inventory.boms</field>
+        <field name="arch" type="xml">
+            <list class="to_component_list">
+                <field name="project_id"/>
+                <field name="panel_id"/>
+                <field name="is_project_bom" widget="boolean_toggle"/>
+                <field name="has_bom" widget="boolean_toggle"/>
+                <field name="numbers_of_panels"/>
+                <field name="deducted" widget="boolean_toggle"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- BOM form View -->
+    <record id="view_inventory_boms_form" model="ir.ui.view">
+        <field name="name">inventory.boms.form</field>
+        <field name="model">inventory.boms</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="to_engineer_signature">Eng/Seif</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="BOM Name" class="to_title"/>
+                        </h1>
+                    </div>
+                    <div class="alert alert-info" invisible="not is_project_bom">
+                        <strong>Project BOM:</strong> This BOM shows the total quantities for all panels in the project.
+                    </div>
+                    <group>
+                        <group string="Project Information" class="to_info_group">
+                            <field name="project_id" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="numbers_of_panels"/>
+                            <field name="is_project_bom" readonly="1"/>
+                        </group>
+                        <group string="Panel Information" class="to_info_group">
+                            <field name="panel_id" options="{'no_create': True}" 
+                                domain="[('project_id', '=', project_id)]"
+                                invisible="is_project_bom"/>
+                            <field name="has_bom" readonly="1" invisible="is_project_bom"/>
+                            <field name="deducted" readonly="1"/>
+                        </group>
+                    </group>
+                    <button name="action_deduct_inventory" string="Deduct from Inventory" type="object" 
+                            class="oe_highlight to_add_button" 
+                            icon="fa-minus-circle"
+                            invisible="deducted"
+                            confirm="Are you sure you want to deduct these quantities from inventory?"/>
+                    <button name="action_create_project_bom" string="Update Project BOM" type="object" 
+                            class="oe_highlight to_add_button" 
+                            icon="fa-refresh"
+                            invisible="not is_project_bom"
+                            confirm="This will recalculate the project BOM based on all current panel BOMs. Continue?"/>
+                    <notebook class="to_notebook">
+                        <page string="BOM Lines">
+                            <field name="bom_line_ids" readonly="1">
+                                <list editable="bottom">
+                                    <field name="product_id" class="to_component_name"/>
+                                    <field name="quantity" class="to_quantity_group"/>
+                                    <field name="deducted_qty" class="to_quantity_group" readonly="1"/>
+                                    <field name="remaining_qty" class="to_quantity_group" readonly="1"/>
+                                    <field name="price" class="to_price_field"/>
+                                    <field name="total_price" class="to_price_field"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes">
+                            <field name="notes"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" invisible="1"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+    
+    <record id="action_inventory_BOMs" model="ir.actions.act_window">
+        <field name="name">Bill of Materials</field>
+        <field name="res_model">inventory.boms</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_inventory_boms_list"/>
+    </record>
+    
+    <!-- Product Form View -->
+    <record id="view_inventory_product_form" model="ir.ui.view">
+        <field name="name">inventory.product.form</field>
+        <field name="model">inventory.product</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <div class="to_engineer_signature">Eng/Seif</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Product Name" class="to_title"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group string="Basic Information" class="to_info_group">
+                            <field name="name"/>
+                            <field name="sn"/>
+                            <field name="brand"/>
+                            <field name="category"/>
+                            <field name="default_uom_id"/>
+                        </group>
+                        <group string="Pricing" class="to_pricing_group">
+                            <field name="price" class="to_price_field"/>
+                            <field name="currency"/>
+                            <field name="current_stock_qty"/>
+                            <field name="minimum_stock"/>
+                        </group>
+                    </group>
+                    <notebook class="to_notebook">
+                        <page string="Technical Details" class="to_tech_spec_group">
+                            <group>
+                                <group>
+                                    <field name="order_code"/>
+                                    <field name="catalog_name"/>
+                                    <field name="keyword"/>
+                                    <field name="datasheet_url"/>
+                                </group>
+                                <group>
+                                    <field name="item_weight_kg"/>
+                                    <field name="item_volume"/>
+                                    <field name="item_dimensions"/>
+                                    <field name="installation_time"/>
+                                </group>
+                            </group>
+                        </page>
+                        <page string="Location">
+                            <group class="to_connection_group">
+                                <field name="location"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" invisible="1"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Form View for Inventory Auth Lines -->
+    <record id="view_inventory_auth_line_form" model="ir.ui.view">
+        <field name="name">inventory.auth.line.form</field>
+        <field name="model">inventory.auth.line</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group class="to_info_group">
+                        <field name="product_id" class="to_component_name"/>
+                        <field name="item_code" readonly="1"/>
+                        <field name="quantity" class="to_quantity_group"/>
+                        <field name="price" class="to_price_field"/>
+                        <field name="location_id" required="1"/>
+                        <field name="uom_id" required="1"/>
+                        <field name="notes"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="save_product_line" string="Save" type="object" class="btn-primary to_add_button"/>
+                    <button special="cancel" string="Cancel" class="btn-secondary"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+    
+    <!-- Form View -->
+
+    <record id="view_inventory_auth_form" model="ir.ui.view">
+        <field name="name">inventory.auth.form</field>
+        <field name="model">inventory.auth</field>
+        <field name="arch" type="xml">
+            <form>
+                <header class="to_header">
+                    <field name="state" widget="statusbar" statusbar_visible="draft,approved,done,canceled"/>
+                </header>
+                <sheet>
+                    <div class="to_engineer_signature">Eng/Seif</div>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name" placeholder="Authorization Name" class="to_title"/>
+                        </h1>
+                    </div>
+                    <button name="action_approve" string="Approve" type="object" class="to_add_button"
+                        invisible="state != 'draft'"/>
+                    <button name="action_done" string="Mark as Done" type="object" class="to_add_button"
+                        invisible="state != 'approved'"/>
+                    <button name="action_cancel" string="Cancel" type="object"
+                        invisible="state in ['done', 'canceled']"/>
+                    <button name="action_draft" string="Set to Draft" type="object"
+                        invisible="state != 'canceled'"/>
+                    <group>
+                        <group string="Basic Information" class="to_info_group">
+                            <field name="name"/>
+                            <field name="type"/>
+                            <field name="date"/>
+                            <field name="supplier_company" invisible="type != 'in'" required="type == 'in'"/>
+                            <field name="supplier_name" invisible="type != 'in'"/>
+                        </group>
+                        <group string="Request Details" class="to_team_group">
+                            <field name="requested_by" readonly="1"/>
+                            <field name="approved_by" readonly="1" invisible="state != 'approved'"/>
+                            <field name="canceled_by" readonly="1" invisible="state != 'canceled'"/>
+                        </group>
+                    </group>
+                    
+                    <notebook class="to_notebook">
+                        <page string="Products">
+                            <div class="oe_button_box" name="product_button_box">
+                                <button name="action_open_product_form" string="Add New Product" type="object" 
+                                        class="oe_highlight to_add_button" 
+                                        icon="fa-plus-square"
+                                        visibility="[('state', '=', 'draft')]"/>
+                            </div>
+                            <field name="line_ids" readonly="1">
+                                <list class="to_component_list">
+                                    <field name="product_id" class="to_component_name"/>
+                                    <field name="item_code" readonly="1"/>
+                                    <button name="action_open_edit_product_form" string="Edit" type="object" icon="fa-edit"/>
+                                </list>
+                            </field>
+                        </page>
+                        <page string="Notes" class="to_notes_page">
+                            <field name="notes" class="to_notes_field"/>
+                        </page>
+                    </notebook>
+                </sheet>
+                <chatter class="oe_chatter">
+                    <field name="message_follower_ids" widget="mail_followers"/>
+                    <field name="activity_ids" invisible="1"/>
+                    <field name="message_ids" widget="mail_thread"/>
+                </chatter>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_inventory_auth" model="ir.actions.act_window">
+        <field name="name">Inventory Authorizations</field>
+        <field name="res_model">inventory.auth</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_inventory_auth_list"/>
+    </record>
+
+
+
+    <record id="action_inventory_product" model="ir.actions.act_window">
+        <field name="name">Products</field>
+        <field name="res_model">inventory.product</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_inventory_product_list"/>
+    </record>
+
+    <record id="action_inventory_BOMs" model="ir.actions.act_window">
+        <field name="name">Bill of Materials</field>
+        <field name="res_model">inventory.boms</field>
+        <field name="view_mode">list,form</field>
+        <field name="view_id" ref="view_inventory_boms_list"/>
+    </record>
+        
+    <!-- Menu Structure -->
+    <menuitem id="menu_technical_office" name="Technical Office"/>
+    <menuitem id="menu_inventory_auth_root" name="Inventory "/>
+    <menuitem id="menu_inventory_auth" name="All Authorizations" parent="menu_inventory_auth_root" action="action_inventory_auth"/>
+    <menuitem id="menu_inventory_product" name="Products" parent="menu_inventory_auth_root" action="action_inventory_product"/>
+    <menuitem id="menu_inventory_BOMs" name="Bill of Materials" parent="menu_inventory_auth_root" action="action_inventory_BOMs"/>
+    
+</odoo>

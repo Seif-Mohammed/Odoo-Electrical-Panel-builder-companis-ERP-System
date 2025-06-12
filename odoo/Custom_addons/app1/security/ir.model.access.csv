@@ -1,0 +1,15 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_inventory_auth,inventory.auth,model_inventory_auth,,1,1,1,1
+access_inventory_auth_line,inventory.auth.line,model_inventory_auth_line,,1,1,1,1
+access_inventory_product,inventory.product,model_inventory_product,,1,1,1,1
+access_inventory_boms,inventory.boms,model_inventory_boms,,1,1,1,1
+access_inventory_bom_line,inventory.bom.line,model_inventory_boms_line,,1,1,1,1
+access_technical_office_project,technical.office.project,model_technical_office_project,,1,1,1,1
+access_technical_office_project_panel,technical.office.project.panel,model_technical_office_project_panel,,1,1,1,1
+access_technical_office_project_cell,technical.office.project.panel.cell,model_technical_office_project_cell,,1,1,1,1
+access_technical_office_project_bom,technical.office.project.bom,model_technical_office_project_bom,,1,1,1,1
+access_technical_office_panel_phase_history,technical.office.panel.phase.history,model_technical_office_panel_phase_history,,1,1,1,1
+access_technical_office_panel_dashboard,technical.office.panel.dashboard,model_technical_office_panel_dashboard,,1,1,1,1
+access_technical_office_followup,technical.office.followup,model_technical_office_followup,,1,1,1,1
+
+access_manufacturing_drawing_download,access.manufacturing.drawing.download,model_manufacturing_drawing_download,base.group_user,1,1,1,1

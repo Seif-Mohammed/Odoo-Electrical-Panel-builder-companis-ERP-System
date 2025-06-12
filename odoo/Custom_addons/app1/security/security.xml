@@ -1,0 +1,11 @@
+<odoo>
+    <data noupdate="0">
+        <record id="group_user_draft_done" model="res.groups">
+            <field name="name">Can Draft Mark as Done</field>
+        </record>
+
+        <record id="group_user_approve_cancel" model="res.groups">
+            <field name="name">Can Approve Cancel</field>
+        </record>
+    </data>
+</odoo>

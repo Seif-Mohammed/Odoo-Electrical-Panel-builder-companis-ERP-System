@@ -1,0 +1,2514 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* app1
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 18.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2025-06-10 08:23+0000\n"
+"PO-Revision-Date: 2025-06-10 08:23+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__sheet_thickness__a02
+msgid "1.25"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__sheet_thickness__a03
+msgid "1.5"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__sheet_thickness__a04
+msgid "2.0"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__sheet_thickness__a05
+msgid "2.5"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__sheet_thickness__a06
+msgid "3.0"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "<strong>Current Phase: </strong>"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "<strong>Progress: </strong>"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid ""
+"<strong>Project BOM:</strong> This BOM shows the total quantities for all "
+"panels in the project."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__access_from
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__access_from
+msgid "Access From"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_needaction
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_needaction
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_needaction
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_needaction
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_needaction
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_needaction
+msgid "Action Needed"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__active
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__active
+msgid "Active"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_ids
+msgid "Activities"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_exception_decoration
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_exception_decoration
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_exception_decoration
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_exception_decoration
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_exception_decoration
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_exception_decoration
+msgid "Activity Exception Decoration"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_state
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_state
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_state
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_state
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_state
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_state
+msgid "Activity State"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_type_icon
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_type_icon
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_type_icon
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_type_icon
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_type_icon
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_type_icon
+msgid "Activity Type Icon"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__duration_actual
+msgid "Actual Duration (Hours)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__date_actual_finished
+msgid "Actual Finish Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__date_actual_start
+msgid "Actual Start Date"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/technical_office.py:0
+msgid "Add Items to BOM"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Add New Component"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/technical_office.py:0
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+msgid "Add New Panel"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Add New Product"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__adm_cost_factor
+msgid "Adm Cost Factor"
+msgstr ""
+
+#. module: app1
+#: model:ir.ui.menu,name:app1.menu_inventory_auth
+msgid "All Authorizations"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__deducted
+msgid "Already Deducted"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__approval_note
+msgid "Approval Note"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Approve"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth__state__approved
+msgid "Approved"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__approved_by
+msgid "Approved By"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid "Are you sure you want to deduct these quantities from inventory?"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__assembly
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__assembly
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__assembly
+msgid "Assembly"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__assembly_duration
+msgid "Assembly Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_attachment_count
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_attachment_count
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_attachment_count
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_attachment_count
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_attachment_count
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_attachment_count
+msgid "Attachment Count"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__type
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__auth_id
+msgid "Authorization"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Authorization Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__name
+msgid "Authorization Number"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth__type__in
+msgid "Authorization to Enter"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth__type__out
+msgid "Authorization to Issue"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_workstation__workstation_type__automatic
+msgid "Automatic"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_dashboard__avg_duration
+msgid "Average Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__bms
+msgid "BMS"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__bom_id
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__bom_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__bom_ids
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "BOM"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__bom_line_ids
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid "BOM Lines"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__name
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid "BOM Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_bom__item_category__a03
+msgid "Bars"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_product_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_cell_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Basic Information"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__bend_phase_duration
+msgid "Bend Phase Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_inventory_BOMs
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__bom_line_ids
+#: model:ir.ui.menu,name:app1.menu_inventory_BOMs
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_product_form
+msgid "Bill of Materials"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.report,name:app1.inventory_bom_report
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Bill of Materials Report"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__boms_ids
+msgid "Boms"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__incoming_from__a02
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__outgoing_from__a02
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__incoming__a02
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__outgoing__a02
+msgid "Bottom"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__brand
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__brand
+msgid "Brand"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__busbar_coated
+msgid "Busbar Coated"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__busbar_configuration
+msgid "Busbar Configuration"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__busbar_current_density
+msgid "Busbar Current Density"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__busbar_material
+msgid "Busbar Material"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_bom__item_category__a01
+msgid "CB"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__cb_spaces
+msgid "CB Spaces"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_line_form
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Cancel"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth__state__canceled
+msgid "Canceled"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__canceled_by
+msgid "Canceled By"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_order__state__cancelled
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_work_order__state__cancelled
+msgid "Cancelled"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__capacity
+msgid "Capacity (units/hour)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__catalog_name
+msgid "Catalog Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__category
+msgid "Category"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__depth
+msgid "Cell Depth (mm)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__height
+msgid "Cell Height (mm)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__name
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_cell_form
+msgid "Cell Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__note
+msgid "Cell Note"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__width
+msgid "Cell Width (mm)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__cell_ids
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Cells"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth_line__uom_id__cm
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__default_uom_id__cm
+msgid "Centimeters"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__user_id
+msgid "Changed By"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__check_date
+msgid "Check Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__check_name
+msgid "Check Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__check_type
+msgid "Check Type"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__checked_by
+msgid "Checked By"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__enclosure_type__a03
+msgid "Chint-lectro EnergiX-F"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__enclosure_type__a01
+msgid "Chint-lectro EnergiX-M"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__enclosure_type__a02
+msgid "Chint-lectro EnergiX-S"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__classic_control_duration
+msgid "Classic Control Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__classic_control
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__classic_control
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__classic_control
+msgid "Classic Control and Automation"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__client
+msgid "Client"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__closed
+msgid "Closed"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Company Logo"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Complete Production"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__completed
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__completed
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__completed
+msgid "Completed"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_cell_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Connection Points"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__consultant
+msgid "Consultant"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_bom__item_category__a02
+msgid "Control"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__copper_formation
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__copper_formation
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__copper_formation
+msgid "Copper Formation"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__copper_formation_duration
+msgid "Copper Formation Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_report__report_type__cost
+msgid "Cost Report"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__cost_per_hour
+msgid "Cost per Hour"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Create Manufacturing Order"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__create_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__create_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__create_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__create_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_product__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_dashboard__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__create_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__create_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__create_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__create_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__create_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__create_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__create_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__create_uid
+msgid "Created by"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__create_date
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__create_date
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__create_date
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__create_date
+#: model:ir.model.fields,field_description:app1.field_inventory_product__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_dashboard__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__create_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__create_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__create_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__create_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__create_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__create_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__create_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__create_date
+msgid "Created on"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__currency
+msgid "Currency"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__current_density
+msgid "Current Density"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__current_order_ids
+#: model_terms:ir.ui.view,arch_db:app1.view_workstation_form
+msgid "Current Orders"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__phase
+msgid "Current Phase"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Current Phase Info"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__current_stock_qty
+msgid "Current Stock QTY"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__inventory_product_qty
+msgid "Current Stock Quantity"
+msgstr ""
+
+#. module: app1
+#: model:ir.ui.menu,name:app1.menu_manufacturing_dashboard
+msgid "Dashboard"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_dashboard__name
+msgid "Dashboard Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__datasheet_url
+msgid "Datasheet URL"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__date
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__date
+msgid "Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__date_from
+msgid "Date From"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__date_to
+msgid "Date To"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid "Deduct from Inventory"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Deducted Qty"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__deducted_qty
+msgid "Deducted Quantity"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__default_uom_id
+msgid "Default Unit of Measure"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__workstation_id
+msgid "Default Workstation"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__description
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_product_form
+msgid "Description"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_cell_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Dimensions"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__display_name
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__display_name
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__display_name
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__display_name
+#: model:ir.model.fields,field_description:app1.field_inventory_product__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_dashboard__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__display_name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__display_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__display_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_dashboard__display_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__display_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__display_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__display_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__display_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__display_name
+msgid "Display Name"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Documentation"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth__state__done
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_order__state__done
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_work_order__state__done
+msgid "Done"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth__state__draft
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_order__state__draft
+msgid "Draft"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__due_date
+msgid "Due Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__duration
+msgid "Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Duration Summary"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__earth_system
+msgid "Earth System"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Edit"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "Edit Product"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__efficiency
+msgid "Efficiency (%)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_report__report_type__efficiency
+msgid "Efficiency Report"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__currency__egp
+msgid "Egyptian Pound"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_bom__item_category__a04
+msgid "Enclosure"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__enclosure_datasheet
+msgid "Enclosure Datasheet"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__enclosure_type
+msgid "Enclosure Type"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__end_date
+msgid "End Date"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_product_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_cell_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Eng/Seif"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__euro_factor
+msgid "Euro Factor"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__exit_manufacturing_date
+msgid "Exit Manufacturing Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__to_be_exported_duration
+msgid "Export Waiting Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_quality_check__status__failed
+msgid "Failed"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Financial"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+msgid "Financial Information"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__financial_note
+msgid "Financial Note"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__finished
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Finished"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__finished_manufacturing_date
+msgid "Finished Manufacturing Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_product__product_type__finished
+msgid "Finished Product"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__followup_ids
+#: model:ir.ui.menu,name:app1.menu_technical_office_project_followup
+msgid "Follow Up"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_follower_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_follower_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_follower_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_follower_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_follower_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_follower_ids
+msgid "Followers"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_partner_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_partner_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_partner_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_partner_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_partner_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_partner_ids
+msgid "Followers (Partners)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__activity_type_icon
+#: model:ir.model.fields,help:app1.field_inventory_boms__activity_type_icon
+#: model:ir.model.fields,help:app1.field_inventory_product__activity_type_icon
+#: model:ir.model.fields,help:app1.field_technical_office_followup__activity_type_icon
+#: model:ir.model.fields,help:app1.field_technical_office_project__activity_type_icon
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__activity_type_icon
+msgid "Font awesome icon e.g. fa-tasks"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__form_type
+msgid "Form Type"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__access_from__a01
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__access_from__a01
+msgid "Front"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__access_from__a02
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__access_from__a02
+msgid "Front or Rear"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__access_from__a03
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__access_from__a03
+msgid "Front, Rear or Side"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_quality_check__check_type__functional
+msgid "Functional Test"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Generated By"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Generated On"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth_line__uom_id__gm
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__default_uom_id__gm
+msgid "Gram"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__has_bom
+msgid "Has BOM"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__has_message
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__has_message
+#: model:ir.model.fields,field_description:app1.field_inventory_product__has_message
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__has_message
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__has_message
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__has_message
+msgid "Has Message"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__hidden_note
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__hidden_note
+msgid "Hidden Note"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__id
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__id
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__id
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__id
+#: model:ir.model.fields,field_description:app1.field_inventory_product__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_dashboard__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__id
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__id
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_dashboard__id
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__id
+msgid "ID"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__project_sn
+msgid "ID/SN"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__ik_rating
+msgid "IK Rating"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__ip_rating
+msgid "IP Rating"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_exception_icon
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_exception_icon
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_exception_icon
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_exception_icon
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_exception_icon
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_exception_icon
+msgid "Icon"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__activity_exception_icon
+#: model:ir.model.fields,help:app1.field_inventory_boms__activity_exception_icon
+#: model:ir.model.fields,help:app1.field_inventory_product__activity_exception_icon
+#: model:ir.model.fields,help:app1.field_technical_office_followup__activity_exception_icon
+#: model:ir.model.fields,help:app1.field_technical_office_project__activity_exception_icon
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__activity_exception_icon
+msgid "Icon to indicate an exception activity."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__message_needaction
+#: model:ir.model.fields,help:app1.field_inventory_boms__message_needaction
+#: model:ir.model.fields,help:app1.field_inventory_product__message_needaction
+#: model:ir.model.fields,help:app1.field_technical_office_followup__message_needaction
+#: model:ir.model.fields,help:app1.field_technical_office_project__message_needaction
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__message_needaction
+msgid "If checked, new messages require your attention."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__message_has_error
+#: model:ir.model.fields,help:app1.field_inventory_boms__message_has_error
+#: model:ir.model.fields,help:app1.field_inventory_product__message_has_error
+#: model:ir.model.fields,help:app1.field_technical_office_followup__message_has_error
+#: model:ir.model.fields,help:app1.field_technical_office_project__message_has_error
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__message_has_error
+msgid "If checked, some messages have a delivery error."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__bend_phase
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__bend_phase
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__bend_phase
+msgid "In Bend Phase"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__manufacture_queue
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__manufacture_queue
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__manufacture_queue
+msgid "In Manufacture Queue"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__painting
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__painting
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__painting
+msgid "In Painting"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_order__state__in_progress
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_work_order__state__in_progress
+msgid "In Progress"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__incoming
+msgid "Incoming"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__incoming_from
+msgid "Incoming From"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_boms__is_project_bom
+msgid "Indicates this is a project-wide BOM"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__installation_time
+msgid "Installation Time"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__installed_qty
+msgid "Installed Quantity"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "Insufficient stock for product %s"
+msgstr ""
+
+#. module: app1
+#: model:ir.ui.menu,name:app1.menu_inventory_auth_root
+msgid "Inventory "
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_inventory_auth
+msgid "Inventory Authorization"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_inventory_auth_line
+msgid "Inventory Authorization Line"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_inventory_auth
+msgid "Inventory Authorizations"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_inventory_boms
+msgid "Inventory BOMs"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_inventory_boms_line
+msgid "Inventory BOMs Line"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "Inventory Deduction Warning"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_inventory_product
+msgid "Inventory Products"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "Inventory quantities deducted successfully."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_is_follower
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_is_follower
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_is_follower
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_is_follower
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_is_follower
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_is_follower
+msgid "Is Follower"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__item_category
+msgid "Item Category"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__item_code
+#: model:ir.model.fields,field_description:app1.field_inventory_product__item_code
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Item Code"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__item_dimensions
+msgid "Item Dimensions"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__item_volume
+msgid "Item Volume"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__item_weight_kg
+msgid "Item Weight (KG)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__keyword
+msgid "Keyword"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth_line__uom_id__kg
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__default_uom_id__kg
+msgid "Kilograms"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__last_activated
+msgid "Last Activated"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__write_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__write_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__write_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__write_uid
+#: model:ir.model.fields,field_description:app1.field_inventory_product__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_dashboard__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__write_uid
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__write_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__write_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__write_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__write_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__write_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__write_uid
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__write_uid
+msgid "Last Updated by"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__write_date
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__write_date
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__write_date
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__write_date
+#: model:ir.model.fields,field_description:app1.field_inventory_product__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_dashboard__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__write_date
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__write_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__write_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__write_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__write_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__write_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__write_date
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__write_date
+msgid "Last Updated on"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__enclosure_type__a04
+msgid "Lectro"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__incoming_from__a05
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__outgoing_from__a05
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__incoming__a05
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__outgoing__a05
+msgid "Left Side"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__location
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__location
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_product_form
+msgid "Location"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Manage your production operations"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_workstation__workstation_type__manual
+msgid "Manual"
+msgstr ""
+
+#. module: app1
+#: model:ir.ui.menu,name:app1.menu_manufacturing_main
+msgid "Manufacturing"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_bom_line
+msgid "Manufacturing BOM Line"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Manufacturing Control Center"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_manufacturing_dashboard
+#: model:ir.model,name:app1.model_manufacturing_dashboard
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Manufacturing Dashboard"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_product_form
+msgid "Manufacturing Details"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_material_line
+msgid "Manufacturing Material Line"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_order
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__order_id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__order_id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__manufacturing_order_id
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Manufacturing Order"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_product
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_product_form
+msgid "Manufacturing Product"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_quality_check
+msgid "Manufacturing Quality Check"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_report
+msgid "Manufacturing Report"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Manufacturing Status"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__manufacturing_time
+msgid "Manufacturing Time (Hours)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_work_order
+msgid "Manufacturing Work Order"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_manufacturing_workstation
+msgid "Manufacturing Workstation"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Mark as Done"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__material_id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__material_id
+msgid "Material"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__material_ids
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Materials"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_quality_check__check_type__measurement
+msgid "Measurement"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_has_error
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_has_error
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_has_error
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_has_error
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_has_error
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_has_error
+msgid "Message Delivery error"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_ids
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_ids
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_ids
+msgid "Messages"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth_line__uom_id__m
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__default_uom_id__m
+msgid "Meters"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth_line__uom_id__mm
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__default_uom_id__mm
+msgid "Millimeters"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__minimum_stock
+msgid "Minimum Stock"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "Minimum Stock Reached."
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.actions.act_window,help:app1.action_panel_dashboard
+msgid "Monitor the progress of all panels through their manufacturing phases."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__my_activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__my_activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_inventory_product__my_activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__my_activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__my_activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__my_activity_date_deadline
+msgid "My Activity Deadline"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_manufacturing_order_new
+msgid "New Manufacturing Order"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_date_deadline
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_date_deadline
+msgid "Next Activity Deadline"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_summary
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_summary
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_summary
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_summary
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_summary
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_summary
+msgid "Next Activity Summary"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_type_id
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_type_id
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_type_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_type_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_type_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_type_id
+msgid "Next Activity Type"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Next Phase →"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "No remaining quantities to deduct from inventory."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__note
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__note
+msgid "Note"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__notes
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__notes
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__notes
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__notes
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__notes
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_cell_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+#: model_terms:ir.ui.view,arch_db:app1.view_workstation_form
+msgid "Notes"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Notes:"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_needaction_counter
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_needaction_counter
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_needaction_counter
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_needaction_counter
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_needaction_counter
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_needaction_counter
+msgid "Number of Actions"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__panel_count
+msgid "Number of Panels"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__no_of_sides
+msgid "Number of Sides"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__message_has_error_counter
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__message_has_error_counter
+#: model:ir.model.fields,field_description:app1.field_inventory_product__message_has_error_counter
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__message_has_error_counter
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__message_has_error_counter
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__message_has_error_counter
+msgid "Number of errors"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__message_needaction_counter
+#: model:ir.model.fields,help:app1.field_inventory_boms__message_needaction_counter
+#: model:ir.model.fields,help:app1.field_inventory_product__message_needaction_counter
+#: model:ir.model.fields,help:app1.field_technical_office_followup__message_needaction_counter
+#: model:ir.model.fields,help:app1.field_technical_office_project__message_needaction_counter
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__message_needaction_counter
+msgid "Number of messages requiring action"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__message_has_error_counter
+#: model:ir.model.fields,help:app1.field_inventory_boms__message_has_error_counter
+#: model:ir.model.fields,help:app1.field_inventory_product__message_has_error_counter
+#: model:ir.model.fields,help:app1.field_technical_office_followup__message_has_error_counter
+#: model:ir.model.fields,help:app1.field_technical_office_project__message_has_error_counter
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__message_has_error_counter
+msgid "Number of messages with delivery error"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__numbers_of_panels
+msgid "Number of panels"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__operation_name
+msgid "Operation"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Options"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__order_code
+msgid "Order Code"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Order Details"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__name
+msgid "Order Number"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_quality_check__check_type__other
+msgid "Other"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__outgoing
+msgid "Outgoing"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__outgoing_from
+msgid "Outgoing From"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__owner
+msgid "Owner"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__packing_note
+msgid "Packing Note"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__painting_color
+msgid "Painting Color"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__painting_duration
+msgid "Painting Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__panel_id
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__panel_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__panel_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__panel_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__panel_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__panel_id
+msgid "Panel"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_technical_office_project_bom
+msgid "Panel BOM"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_technical_office_project_cell
+msgid "Panel Cells"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__panel_cost
+msgid "Panel Cost"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_dashboard__panel_count
+msgid "Panel Count"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_technical_office_panel_dashboard
+#: model:ir.ui.menu,name:app1.menu_panel_dashboard
+msgid "Panel Dashboard"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__depth
+msgid "Panel Depth (mm)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__height
+msgid "Panel Height (mm)"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid "Panel Information"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__name
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Panel Name"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_panel_dashboard_pivot
+msgid "Panel Phase Analysis"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_panel_dashboard
+msgid "Panel Phase Dashboard"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_panel_dashboard_graph
+msgid "Panel Phase Distribution"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_panel_phase_history
+#: model:ir.model,name:app1.model_technical_office_panel_phase_history
+msgid "Panel Phase History"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__sheet_thickness
+msgid "Panel Sheet Thickness (mm)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__panel_shop_drawing
+msgid "Panel Shop Drawing"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__panel_unit_price
+msgid "Panel Unit Price"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__width
+msgid "Panel Width (mm)"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Panel:"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_technical_office_project_panel
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__panel_ids
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+msgid "Panels"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__parts_note
+msgid "Parts Note"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_quality_check__status__passed
+msgid "Passed"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_quality_check__status__pending
+msgid "Pending"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_dashboard__phase
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__phase
+msgid "Phase"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__phase_history_ids
+#: model:ir.ui.menu,name:app1.menu_panel_phase_history
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Phase History"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__phase_start_date
+msgid "Phase Start Date"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Phase Tracking"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_auth_line__uom_id__pcs
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__default_uom_id__pcs
+msgid "Pieces"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__duration_planned
+msgid "Planned Duration (Hours)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__date_planned_finished
+msgid "Planned Finish Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__date_planned_start
+msgid "Planned Start Date"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_product_form
+msgid "Pricing"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__product_id
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__product_id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__product_id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__product_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__product_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__inventory_product_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_bom__product_id
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Product"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__code
+msgid "Product Code"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_product_form
+msgid "Product Information"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_product_management
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Product Management"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__name
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__name
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_product_form
+msgid "Product Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__product_type
+msgid "Product Type"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.constraint,message:app1.constraint_inventory_product_name_uniq
+msgid "Product name must be unique!"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Production Management"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_report__report_type__production
+msgid "Production Report"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Production Reports"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_inventory_product
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__line_ids
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__product_ids
+#: model:ir.ui.menu,name:app1.menu_inventory_product
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Products"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__profit
+msgid "Profit %"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__progress_percentage
+msgid "Progress %"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__project_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_dashboard__project_name
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__project_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__project_id
+msgid "Project"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+#: code:addons/app1/models/technical_office.py:0
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__is_project_bom
+msgid "Project BOM"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+msgid "Project Folder"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__project_folder
+msgid "Project Folder Path"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_technical_office_project_followup
+#: model:ir.model,name:app1.model_technical_office_followup
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_followup_list
+msgid "Project Follow Up"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid "Project Information"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__name
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+msgid "Project Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model,name:app1.model_technical_office_project_panel
+#: model:ir.ui.menu,name:app1.menu_technical_office_project_panel
+msgid "Project Panels"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__start_date
+msgid "Project Start Date"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+msgid "Project Team"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "Project is required to create project BOM."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__project_id
+msgid "Project name"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Project:"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__quality_check_ids
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Quality Checks"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__quality_control
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__quality_control
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__quality_control
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Quality Control"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__quality_control_duration
+msgid "Quality Control Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_report__report_type__quality
+msgid "Quality Report"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__quantity
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__quantity
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__quantity
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__quantity_needed
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Quantity"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__quantity_consumed
+msgid "Quantity Consumed"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__quantity_produced
+msgid "Quantity Produced"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__quantity_required
+msgid "Quantity Required"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__quantity_to_produce
+msgid "Quantity to Produce"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__manufacture_queue_duration
+msgid "Queue Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_product__product_type__raw_material
+msgid "Raw Material"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_work_order__state__ready
+msgid "Ready"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__incoming_from__a07
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__outgoing_from__a07
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__incoming__a07
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__outgoing__a07
+msgid "Rear"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Remaining Qty"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__remaining_qty
+msgid "Remaining to Deduct"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__name
+msgid "Report Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__report_type
+msgid "Report Type"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Request Details"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__requested_by
+msgid "Requested By"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Resources and Planning"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__activity_user_id
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__activity_user_id
+#: model:ir.model.fields,field_description:app1.field_inventory_product__activity_user_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_followup__activity_user_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__activity_user_id
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__activity_user_id
+msgid "Responsible User"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__incoming_from__a06
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__outgoing_from__a06
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__incoming__a06
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__outgoing__a06
+msgid "Right Side"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__sn
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__sn
+msgid "SN"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__sales_eng
+msgid "Sales Engineer"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_line_form
+msgid "Save"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Schedule"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__section
+msgid "Section"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__selectivity
+msgid "Selectivity"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_workstation__workstation_type__semi_auto
+msgid "Semi-Automatic"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_product__product_type__semi_finished
+msgid "Semi-Finished"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_product__sn
+msgid "Serial Number"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_auth_form
+msgid "Set to Draft"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__incoming_from__a04
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__outgoing_from__a04
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__incoming__a04
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__outgoing__a04
+msgid "Side"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__location_id
+msgid "Stand number"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__standard_cost
+msgid "Standard Cost"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_panel_phase_history__start_date
+msgid "Start Date"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Start Production"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_panel_dashboard_kanban
+msgid "Started:"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__start_manufacturing_date
+msgid "Starting Manufacturing Date"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__state
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__state
+#: model:ir.model.fields,field_description:app1.field_manufacturing_quality_check__status
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__state
+msgid "Status"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_workstation_form
+msgid "Status and Settings"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__activity_state
+#: model:ir.model.fields,help:app1.field_inventory_boms__activity_state
+#: model:ir.model.fields,help:app1.field_inventory_product__activity_state
+#: model:ir.model.fields,help:app1.field_technical_office_followup__activity_state
+#: model:ir.model.fields,help:app1.field_technical_office_project__activity_state
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__activity_state
+msgid ""
+"Status based on activities\n"
+"Overdue: Due date is already passed\n"
+"Today: Activity date is today\n"
+"Planned: Future activities."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__studying
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__studying
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__studying
+msgid "Studying"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__studying_duration
+msgid "Studying Duration (Days)"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+msgid "Success"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__supplier_company
+msgid "Supplier Company"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth__supplier_name
+msgid "Supplier Name"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__supply_from
+msgid "Supply From"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_product_form
+msgid "Technical Details"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__tech_note
+msgid "Technical Note"
+msgstr ""
+
+#. module: app1
+#: model:ir.ui.menu,name:app1.menu_technical_office
+#: model:ir.ui.menu,name:app1.menu_technical_office_project
+msgid "Technical Office"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_technical_office_project
+#: model:ir.model,name:app1.model_technical_office_project
+msgid "Technical Office Projects"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_list
+msgid "Technical Projects"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_form
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "Technical Specifications"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__tech_support
+msgid "Technical Support"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/technical_office.py:0
+msgid "The quantity in BOM is greater than the quantity in stock."
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid ""
+"This will recalculate the project BOM based on all current panel BOMs. "
+"Continue?"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__to_be_exported
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__to_be_exported
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__to_be_exported
+msgid "To Be Exported"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__incoming_from__a01
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__outgoing_from__a01
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__incoming__a01
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__outgoing__a01
+msgid "Top"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__incoming_from__a03
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_cell__outgoing_from__a03
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__incoming__a03
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__outgoing__a03
+msgid "Top or Bottom"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__total_duration
+msgid "Total Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__total_price
+#: model:ir.model.fields,field_description:app1.field_inventory_product__total_price
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Total Price"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.actions.act_window,help:app1.action_panel_dashboard
+msgid "Track your panel phases!"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_cell__two_part_door
+msgid "Two Part Door"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__workstation_type
+msgid "Type"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,help:app1.field_inventory_auth__activity_exception_decoration
+#: model:ir.model.fields,help:app1.field_inventory_boms__activity_exception_decoration
+#: model:ir.model.fields,help:app1.field_inventory_product__activity_exception_decoration
+#: model:ir.model.fields,help:app1.field_technical_office_followup__activity_exception_decoration
+#: model:ir.model.fields,help:app1.field_technical_office_project__activity_exception_decoration
+#: model:ir.model.fields,help:app1.field_technical_office_project_panel__activity_exception_decoration
+msgid "Type of the exception activity on record."
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__inventory_product__currency__usd
+msgid "US Dollar"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__usd_factor
+msgid "USD Factor"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__price
+#: model:ir.model.fields,field_description:app1.field_inventory_boms_line__price
+#: model:ir.model.fields,field_description:app1.field_inventory_product__price
+#: model_terms:ir.ui.view,arch_db:app1.report_bom_template
+msgid "Unit Price"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_auth_line__uom_id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_bom_line__unit_of_measure
+#: model:ir.model.fields,field_description:app1.field_manufacturing_material_line__unit_of_measure
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__unit_of_measure
+#: model:ir.model.fields,field_description:app1.field_manufacturing_product__unit_of_measure
+msgid "Unit of Measure"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_inventory_boms_form
+msgid "Update Project BOM"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__used_aluminum_cables
+msgid "Used Aluminum Cables"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_inventory_boms__user
+msgid "User"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__version
+msgid "Version"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project__version_no
+msgid "Version Number"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_quality_check__check_type__visual
+msgid "Visual Inspection"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__manufacturing_work_order__state__waiting
+msgid "Waiting"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__waiting_approval_duration
+msgid "Waiting Approval Duration (Days)"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_dashboard__phase__waiting_approval
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_panel_phase_history__phase__waiting_approval
+#: model:ir.model.fields.selection,name:app1.selection__technical_office_project_panel__phase__waiting_approval
+msgid "Waiting for Manufacturing Approval"
+msgstr ""
+
+#. module: app1
+#. odoo-python
+#: code:addons/app1/models/inventory_auth.py:0
+#: code:addons/app1/models/technical_office.py:0
+msgid "Warning!"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__with_canopy
+msgid "With Canopy"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_technical_office_project_panel__with_steel_base
+msgid "With Steel Base"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__work_instructions
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_order_form
+msgid "Work Instructions"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__name
+msgid "Work Order"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Work Orders"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_order__workstation_id
+#: model:ir.model.fields,field_description:app1.field_manufacturing_work_order__workstation_id
+#: model_terms:ir.ui.view,arch_db:app1.view_workstation_form
+msgid "Workstation"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__code
+msgid "Workstation Code"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_workstation_form
+msgid "Workstation Details"
+msgstr ""
+
+#. module: app1
+#: model:ir.actions.act_window,name:app1.action_workstation_management
+msgid "Workstation Management"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_workstation__name
+msgid "Workstation Name"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_manufacturing_dashboard
+msgid "Workstation Setup"
+msgstr ""
+
+#. module: app1
+#: model:ir.model.fields,field_description:app1.field_manufacturing_report__workstation_ids
+msgid "Workstations"
+msgstr ""
+
+#. module: app1
+#: model_terms:ir.ui.view,arch_db:app1.view_technical_office_project_panel_form
+msgid "← Previous Phase"
+msgstr ""

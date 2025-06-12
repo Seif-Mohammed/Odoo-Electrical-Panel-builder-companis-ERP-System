@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copper Busbar Bending Calculator - Eng. Seif Mohamed</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #2E2E2E;
+            color: #E0E0E0;
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #3C3C3C, #2E2E2E);
+            border: 2px solid #DAA520;
+            border-radius: 10px;
+        }
+
+        .header h1 {
+            color: #DAA520;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .engineer-signature {
+            color: #B87333;
+            font-size: 1.2em;
+            font-style: italic;
+            font-weight: bold;
+        }
+
+        .main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .input-panel, .diagram-panel {
+            background-color: #3C3C3C;
+            border: 2px solid #DAA520;
+            border-radius: 10px;
+            padding: 25px;
+        }
+
+        .section-title {
+            color: #DAA520;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            border-bottom: 2px solid #B87333;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            color: #E0E0E0;
+            font-weight: bold;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 10px;
+            background-color: #4A4A4A;
+            color: #FFFFFF;
+            border: 1px solid #606060;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group select:focus {
+            outline: none;
+            border-color: #B87333;
+            box-shadow: 0 0 5px rgba(184, 115, 51, 0.3);
+        }
+
+        .calculate-btn {
+            width: 100%;
+            padding: 15px;
+            background-color: #B87333;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .calculate-btn:hover {
+            background-color: #D48A37;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .calculate-btn:active {
+            transform: translateY(0);
+        }
+
+        .diagram-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .shape-diagram {
+            width: 100%;
+            max-width: 400px;
+            height: 250px;
+            border: 2px solid #B87333;
+            border-radius: 8px;
+            background-color: #FFFACD;
+            margin: 0 auto;
+        }
+
+        .shape-info {
+            background-color: #4A4A4A;
+            padding: 15px;
+            border: 1px solid #B87333;
+            border-radius: 5px;
+            margin-top: 15px;
+        }
+
+        .shape-info h3 {
+            color: #DAA520;
+            margin-bottom: 10px;
+        }
+
+        .results-section {
+            background-color: #3C3C3C;
+            border: 2px solid #DAA520;
+            border-radius: 10px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .results-content {
+            background-color: #2E2E2E;
+            border: 1px solid #B87333;
+            border-radius: 5px;
+            padding: 20px;
+            max-height: 500px;
+            overflow-y: auto;
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .results-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 15px 0;
+        }
+
+        .results-table th, .results-table td {
+            padding: 8px 12px;
+            text-align: left;
+            border-bottom: 1px solid #606060;
+        }
+
+        .results-table th {
+            background-color: #B87333;
+            color: white;
+            font-weight: bold;
+        }
+
+        .results-table tr:nth-child(even) {
+            background-color: #4A4A4A;
+        }
+
+        .export-btn {
+            background-color: #228B22;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .export-btn:hover {
+            background-color: #32CD32;
+        }
+
+        .highlight-value {
+            color: #0066CC;
+            font-weight: bold;
+        }
+
+        .total-value {
+            color: #009900;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .bar-header {
+            color: #B87333;
+            font-size: 1.2em;
+            font-weight: bold;
+            margin: 15px 0 10px 0;
+            border-bottom: 1px solid #B87333;
+            padding-bottom: 5px;
+        }
+
+        @media (max-width: 768px) {
+            .main-content {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+        }
+
+        .disabled {
+            background-color: #666 !important;
+            color: #999 !important;
+            cursor: not-allowed !important;
+        }
+
+        .loading {
+            opacity: 0.7;
+            pointer-events: none;
+        }
+
+        .loading::after {
+            content: "Calculating...";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(0,0,0,0.8);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🔨 Copper Busbar Bending Calculator</h1>
+            <div class="engineer-signature">🔧 Eng: Seif Mohamed</div>
+        </div>
+
+        <div class="main-content">
+            <div class="input-panel">
+                <h2 class="section-title">Multiple Bars Configuration</h2>
+                
+                <div class="form-group">
+                    <label for="numBars">Number of Bars:</label>
+                    <input type="number" id="numBars" min="1" max="100" value="4">
+                </div>
+
+                <div class="form-group">
+                    <label for="spacing">Spacing Between Bars (mm):</label>
+                    <input type="number" id="spacing" min="0" max="500" step="0.1" value="0">
+                </div>
+
+                <div class="form-group">
+                    <label for="shape">Shape:</label>
+                    <select id="shape" onchange="updateShapeDiagram()">
+                        <option value="L-Shape">L-Shape</option>
+                        <option value="U-Shape">U-Shape</option>
+                        <option value="Z-Shape">Z-Shape</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="thickness">Bar Thickness (mm):</label>
+                    <input type="number" id="thickness" min="0.1" max="100" step="0.1" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="width">Bar Width (mm):</label>
+                    <input type="number" id="width" min="0.1" max="1000" step="0.1" value="100">
+                </div>
+
+                <div class="form-group">
+                    <label for="bendRadius">Bend Radius (mm):</label>
+                    <input type="number" id="bendRadius" min="0.1" max="100" step="0.1" value="5">
+                </div>
+
+                <div class="form-group">
+                    <label for="bendAngle1">Bend Angle 1 (degrees):</label>
+                    <input type="number" id="bendAngle1" min="0" max="180" step="0.1" value="135">
+                </div>
+
+                <div class="form-group">
+                    <label for="bendAngle2">Bend Angle 2 (degrees):</label>
+                    <input type="number" id="bendAngle2" min="0" max="180" step="0.1" value="135">
+                </div>
+
+                <div class="form-group">
+                    <label for="kFactor">K-Factor:</label>
+                    <input type="number" id="kFactor" min="0.01" max="1" step="0.001" value="0.4">
+                </div>
+
+                <div class="form-group">
+                    <label for="lengthA">Length A (mm):</label>
+                    <input type="number" id="lengthA" min="1" max="1000" step="0.1" value="500">
+                </div>
+
+                <div class="form-group">
+                    <label for="lengthB">Length B (mm):</label>
+                    <input type="number" id="lengthB" min="1" max="1000" step="0.1" value="500">
+                </div>
+
+                <div class="form-group">
+                    <label for="lengthC">Length C (mm):</label>
+                    <input type="number" id="lengthC" min="0" max="1000" step="0.1" value="500">
+                </div>
+
+                <button class="calculate-btn" onclick="calculateMultipleBars()">
+                    Calculate Multiple Bars
+                </button>
+            </div>
+
+            <div class="diagram-panel">
+                <h2 class="section-title">Shape Diagram & Information</h2>
+                
+                <div class="diagram-container">
+                    <svg id="shapeDiagram" class="shape-diagram" viewBox="0 0 400 250">
+                        <!-- SVG content will be generated by JavaScript -->
+                    </svg>
+                </div>
+
+                <div class="shape-info">
+                    <h3>Multiple Bars Layout:</h3>
+                    <p><strong>Angle 2:</strong> Ignore Angle 2 in case of L-shape. Angle 2 is used in case of Z-shape EQUAL TO Angle 1</p>
+                    <p><strong>Length C:</strong> Third segment length (Z-shape, U-shape only)</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="results-section">
+            <h2 class="section-title">Calculation Results</h2>
+            <div id="resultsContent" class="results-content">
+                <p>Enter parameters and click "Calculate Multiple Bars" to see results...</p>
+            </div>
+            <button class="export-btn" onclick="exportResults()" style="display: none;" id="exportBtn">
+                Export to Text File
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Global variables to store calculation results
+        let calculationResults = null;
+
+        // Copper density: 8.96 g/cm³
+        const COPPER_DENSITY = 8.96e-3; // g/mm³
+
+        // Update shape diagram based on selection
+        function updateShapeDiagram() {
+            const shape = document.getElementById('shape').value;
+            const bendAngle2Input = document.getElementById('bendAngle2');
+            
+            // Handle bend angle 2 visibility
+            if (shape === 'Z-Shape') {
+                bendAngle2Input.classList.add('disabled');
+                bendAngle2Input.disabled = true;
+            } else {
+                bendAngle2Input.classList.remove('disabled');
+                bendAngle2Input.disabled = false;
+            }
+
+            drawShapeDiagram(shape);
+        }
+
+        // Draw SVG diagram for different shapes
+        function drawShapeDiagram(shape) {
+            const svg = document.getElementById('shapeDiagram');
+            let svgContent = '';
+
+            switch (shape) {
+                case 'L-Shape':
+                    svgContent = `
+                        <!-- L-Shape -->
+                        <line x1="50" y1="200" x2="200" y2="200" stroke="#B87333" stroke-width="4"/>
+                        <line x1="200" y1="200" x2="200" y2="50" stroke="#B87333" stroke-width="4"/>
+                        
+                        <!-- Bend radius indicator -->
+                        <path d="M 185 185 A 15 15 0 0 1 200 170" stroke="#696969" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        
+                        <!-- Dimension lines -->
+                        <line x1="50" y1="220" x2="200" y2="220" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="50" y1="215" x2="50" y2="225" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="200" y1="215" x2="200" y2="225" stroke="#4169E1" stroke-width="2"/>
+                        
+                        <line x1="220" y1="50" x2="220" y2="200" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="215" y1="50" x2="225" y2="50" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="215" y1="200" x2="225" y2="200" stroke="#4169E1" stroke-width="2"/>
+                        
+                        <!-- Labels -->
+                        <text x="125" y="240" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">Length A</text>
+                        <text x="240" y="125" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">Length B</text>
+                        <text x="190" y="180" text-anchor="middle" fill="#8B0000" font-size="12">R</text>
+                    `;
+                    break;
+                    
+                case 'U-Shape':
+                    svgContent = `
+                        <!-- U-Shape -->
+                        <line x1="80" y1="50" x2="80" y2="200" stroke="#B87333" stroke-width="4"/>
+                        <line x1="80" y1="200" x2="220" y2="200" stroke="#B87333" stroke-width="4"/>
+                        <line x1="220" y1="200" x2="220" y2="50" stroke="#B87333" stroke-width="4"/>
+                        
+                        <!-- Bend radius indicators -->
+                        <path d="M 65 185 A 15 15 0 0 1 80 170" stroke="#696969" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        <path d="M 220 185 A 15 15 0 0 0 235 170" stroke="#696969" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        
+                        <!-- Dimension lines -->
+                        <line x1="50" y1="50" x2="50" y2="200" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="45" y1="50" x2="55" y2="50" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="45" y1="200" x2="55" y2="200" stroke="#4169E1" stroke-width="2"/>
+                        
+                        <line x1="250" y1="50" x2="250" y2="200" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="245" y1="50" x2="255" y2="50" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="245" y1="200" x2="255" y2="200" stroke="#4169E1" stroke-width="2"/>
+                        
+                        <line x1="80" y1="220" x2="220" y2="220" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="80" y1="215" x2="80" y2="225" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="220" y1="215" x2="220" y2="225" stroke="#4169E1" stroke-width="2"/>
+                        
+                        <!-- Labels -->
+                        <text x="30" y="125" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">A</text>
+                        <text x="270" y="125" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">A</text>
+                        <text x="150" y="240" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">Length B</text>
+                        <text x="70" y="180" text-anchor="middle" fill="#8B0000" font-size="12">R</text>
+                        <text x="230" y="180" text-anchor="middle" fill="#8B0000" font-size="12">R</text>
+                    `;
+                    break;
+                    
+                case 'Z-Shape':
+                    svgContent = `
+                        <!-- Z-Shape -->
+                        <line x1="50" y1="80" x2="180" y2="80" stroke="#B87333" stroke-width="4"/>
+                        <line x1="180" y1="80" x2="120" y2="140" stroke="#B87333" stroke-width="4"/>
+                        <line x1="120" y1="140" x2="250" y2="140" stroke="#B87333" stroke-width="4"/>
+                        
+                        <!-- Bend radius indicators -->
+                        <path d="M 165 65 A 15 15 0 0 1 180 80" stroke="#696969" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        <path d="M 135 125 A 15 15 0 0 1 120 140" stroke="#696969" stroke-width="2" fill="none" stroke-dasharray="5,5"/>
+                        
+                        <!-- Dimension lines -->
+                        <line x1="50" y1="60" x2="180" y2="60" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="50" y1="55" x2="50" y2="65" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="180" y1="55" x2="180" y2="65" stroke="#4169E1" stroke-width="2"/>
+                        
+                        <line x1="120" y1="160" x2="250" y2="160" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="120" y1="155" x2="120" y2="165" stroke="#4169E1" stroke-width="2"/>
+                        <line x1="250" y1="155" x2="250" y2="165" stroke="#4169E1" stroke-width="2"/>
+                        
+                        <!-- Labels -->
+                        <text x="115" y="50" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">Length A</text>
+                        <text x="150" y="115" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">B</text>
+                        <text x="185" y="180" text-anchor="middle" fill="#8B0000" font-size="14" font-weight="bold">Length C</text>
+                        <text x="170" y="75" text-anchor="middle" fill="#8B0000" font-size="12">R</text>
+                        <text x="130" y="135" text-anchor="middle" fill="#8B0000" font-size="12">R</text>
+                    `;
+                    break;
+            }
+
+            svg.innerHTML = svgContent;
+        }
+
+        // Calculate bend allowance using the neutral axis method
+        function calculateBendAllowance(spacing, thickness, bendRadius, angleDegrees, kFactor) {
+            const angleRadians = angleDegrees * Math.PI / 180;
+            return angleRadians * (bendRadius + kFactor * thickness);
+        }
+
+        // Calculate bend deduction
+        function calculateBendDeduction(spacing, thickness, bendRadius, angleDegrees, kFactor) {
+            const bendAllowance = calculateBendAllowance(spacing, thickness, bendRadius, angleDegrees, kFactor);
+            const setback = (bendRadius + thickness) * Math.tan((angleDegrees * Math.PI / 180) / 2);
+            return 2 * setback - bendAllowance;
+        }
+
+        // Calculate dimensions for different bar shapes
+        function calculateBarDimensions(shape, spacing, thickness, width, bendRadius, lengthA, lengthB, lengthC, bendAngle1, bendAngle2, kFactor) {
+            const results = {};
+
+            if (shape === 'L-Shape') {
+                const bendDeduction = calculateBendDeduction(spacing, thickness, bendRadius, bendAngle1, kFactor);
+                const flatLength = lengthA + lengthB - bendDeduction;
+                const bendLocation = lengthA - (bendDeduction / 2);
+
+                results['Flat Length'] = flatLength;
+                results['Bend Location'] = bendLocation;
+                results['Bend Deduction'] = bendDeduction;
+                results['Leg A Length'] = lengthA;
+                results['Leg B Length'] = lengthB;
+
+            } else if (shape === 'U-Shape') {
+                const bendDeduction1 = calculateBendDeduction(spacing, thickness, bendRadius, bendAngle1, kFactor);
+                let flatLength = lengthA + lengthB + lengthC - bendDeduction1;
+                const bend1Location = lengthA - (bendDeduction1 / 2);
+                
+                if (bendAngle1 === 45) {
+                    flatLength -= thickness;
+                }
+
+                const bendDeduction2 = calculateBendDeduction(spacing, thickness, bendRadius, bendAngle2, kFactor);
+                flatLength -= bendDeduction2;
+                
+                if (bendAngle2 === 45) {
+                    flatLength -= thickness;
+                }
+                
+                const bend2Location = flatLength - lengthC + (bendDeduction2 / 2);
+
+                results['Flat Length'] = flatLength;
+                results['First Bend Location'] = bend1Location;
+                results['Second Bend Location'] = bend2Location;
+                results['Leg A Length'] = lengthA;
+                results['Leg B Length'] = lengthB;
+                results['Leg C Length'] = lengthC;
+
+            } else if (shape === 'Z-Shape') {
+                const bendDeduction1 = calculateBendDeduction(spacing, thickness, bendRadius, bendAngle1, kFactor);
+                let flatLength = lengthA + lengthB + lengthC - bendDeduction1;
+                const bend1Location = lengthA - (bendDeduction1 / 2);
+                
+                if (bendAngle1 === 45) {
+                    flatLength -= thickness;
+                }
+
+                const bendDeduction2 = calculateBendDeduction(spacing, thickness, bendRadius, bendAngle1, kFactor);
+                flatLength -= bendDeduction2;
+                
+                if (bendAngle1 === 45) {
+                    flatLength -= thickness;
+                }
+                
+                const bend2Location = flatLength - (lengthC - (bendDeduction2 / 2));
+
+                results['Flat Length'] = flatLength;
+                results['First Bend Location'] = bend1Location;
+                results['Second Bend Location'] = bend2Location;
+                results['First Leg Length'] = lengthA;
+                results['Middle Length'] = lengthB;
+                results['Third Leg Length'] = lengthC;
+            }
+
+            // Calculate weight
+            const volume = results['Flat Length'] * width * thickness; // mm³
+            const weight = volume * COPPER_DENSITY; // grams
+            results['Weight'] = weight;
+
+            return results;
+        }
+
+        // Main calculation function
+        function calculateMultipleBars() {
+            // Get input values
+            const numBars = parseInt(document.getElementById('numBars').value);
+            const spacing = parseFloat(document.getElementById('spacing').value);
+            const shape = document.getElementById('shape').value;
+            const thickness = parseFloat(document.getElementById('thickness').value);
+            const width = parseFloat(document.getElementById('width').value);
+            const bendRadius = parseFloat(document.getElementById('bendRadius').value);
+            const lengthA = parseFloat(document.getElementById('lengthA').value);
+            const lengthB = parseFloat(document.getElementById('lengthB').value);
+            const lengthC = parseFloat(document.getElementById('lengthC').value);
+            const bendAngle1 = parseFloat(document.getElementById('bendAngle1').value);
+            const bendAngle2 = parseFloat(document.getElementById('bendAngle2').value);
+            const kFactor = parseFloat(document.getElementById('kFactor').value);
+
+            // Validate inputs
+            if (isNaN(numBars) || isNaN(spacing) || isNaN(thickness) || isNaN(width) || 
+                isNaN(bendRadius) || isNaN(lengthA) || isNaN(lengthB) || isNaN(lengthC) || 
+                isNaN(bendAngle1) || isNaN(bendAngle2) || isNaN(kFactor)) {
+                alert('Please enter valid numeric values for all fields.');
+                return;
+            }
+
+            // Show loading state
+            const resultsContent = document.getElementById('resultsContent');
+            resultsContent.innerHTML = '<p>Calculating... Please wait...</p>';
+
+            // Calculate deductions
+            const deduction1 = (thickness + spacing) * Math.tan(((180 - bendAngle1) * Math.PI / 180) / 2);
+            let deduction2 = 0;
+            if (shape === 'U-Shape') {
+                deduction2 = (thickness + spacing) * Math.tan(((180 - bendAngle2) * Math.PI / 180) / 2);
+            }
+
+            let totalFlatLength = 0;
+            let totalWeight = 0;
+            const barResults = [];
+
+            // Calculate for each bar
+            for (let i = 0; i < numBars; i++) {
+                let adjustedLengthA, adjustedLengthB, adjustedLengthC;
+
+                if (shape === 'L-Shape') {
+                    adjustedLengthA = lengthA - i * deduction1;
+                    adjustedLengthB = lengthB - i * deduction1;
+                    adjustedLengthC = lengthC - i * deduction1;
+                } else if (shape === 'U-Shape') {
+                    adjustedLengthA = lengthA - i * deduction1;
+                    adjustedLengthB = lengthB - i * (deduction1 + deduction2);
+                    adjustedLengthC = lengthC - i * deduction2;
+                } else if (shape === 'Z-Shape') {
+                    adjustedLengthA = lengthA - i * deduction1;
+                    adjustedLengthB = lengthB;
+                    adjustedLengthC = lengthC + i * deduction1;
+                }
+
+                const singleResult = calculateBarDimensions(
+                    shape, spacing, thickness, width, bendRadius,
+                    adjustedLengthA, adjustedLengthB, adjustedLengthC,
+                    180 - bendAngle1, 180 - bendAngle2, kFactor
+                );
+
+                barResults.push(singleResult);
+                totalFlatLength += singleResult['Flat Length'];
+                totalWeight += singleResult['Weight'];
+            }
+
+            // Store results for export
+            calculationResults = {
+                parameters: {
+                    numBars, spacing, shape, thickness, width, bendRadius,
+                    lengthA, lengthB, lengthC, bendAngle1, bendAngle2, kFactor
+                },
+                barResults,
+                totalFlatLength,
+                totalWeight
+            };
+
+            // Display results
+            displayResults();
+        }
+
+        // Display calculation results
+        function displayResults() {
+            const resultsContent = document.getElementById('resultsContent');
+            const exportBtn = document.getElementById('exportBtn');
+            
+            let html = `
+                <div class="bar-header">CALCULATION PARAMETERS:</div>
+                <p>• Number of bars: <span class="highlight-value">${calculationResults.parameters.numBars}</span></p>
+                <p>• Spacing between bars: <span class="highlight-value">${calculationResults.parameters.spacing} mm</span></p>
+                <p>• Shape: <span class="highlight-value">${calculationResults.parameters.shape}</span></p>
+                <p>• Material: <span class="highlight-value">Copper</span></p>
+                <p>• Bar Thickness: <span class="highlight-value">${calculationResults.parameters.thickness} mm</span></p>
+                <p>• Bar Width: <span class="highlight-value">${calculationResults.parameters.width} mm</span></p>
+                <p>• Bend Radius: <span class="highlight-value">${calculationResults.parameters.bendRadius} mm</span></p>
+                <p>• K-Factor: <span class="highlight-value">${calculationResults.parameters.kFactor}</span></p>
+                <br>
+                
+                <div class="bar-header">INDIVIDUAL BAR CALCULATIONS:</div>
+            `;
+
+            calculationResults.barResults.forEach((result, index) => {
+                html += `
+                    <div class="bar-header">BAR #${index + 1} DIMENSIONS:</div>
+                    <table class="results-table">
+                `;
+                
+                for (const [key, value] of Object.entries(result)) {
+                    if (typeof value === 'number') {
+                        html += `<tr><td><strong>${key}:</strong></td><td><span class="highlight-value">${value.toFixed(2)} mm</span></td></tr>`;
+                    } else {
+                        html += `<tr><td><strong>${key}:</strong></td><td><span class="highlight-value">${value}</span></td></tr>`;
+                    }
+                }
+                
+                html += '</table>';
+            });
+
+            html += `
+                <hr style="border: 2px solid #B87333; margin: 20px 0;">
+                <div class="bar-header">TOTAL MATERIAL REQUIREMENTS:</div>
+                <p>• <strong>Total flat length needed:</strong> <span class="total-value">${calculationResults.totalFlatLength.toFixed(2)} mm</span></p>
+                <p>• <strong>Total weight:</strong> <span class="total-value">${calculationResults.totalWeight.toFixed(2)} g</span></p>
+            `;
+
+            resultsContent.innerHTML = html;
+            exportBtn.style.display = 'inline-block';
+        }
+
+        // Export results to text file
+        function exportResults() {
+            if (!calculationResults) {
+                alert('No calculation results to export.');
+                return;
+            }
+
+            const now = new Date();
+            const timestamp = now.toISOString().replace(/[:.]/g, '-').slice(0, -5);
+            const dateStr = now.toLocaleString();
+
+            let content = `
+=================================================================
+COPPER BUSBAR BENDING CALCULATION RESULTS
+=================================================================
+Generated on: ${dateStr}
+
+Software: Copper Busbar Calculator v1.0 (Web Version)
+=================================================================
+
+CALCULATION PARAMETERS:
+• Number of bars: ${calculationResults.parameters.numBars}
+• Spacing between bars: ${calculationResults.parameters.spacing} mm
+• Shape: ${calculationResults.parameters.shape}
+• Material: Copper
+• Bar Thickness: ${calculationResults.parameters.thickness} mm
+• Bar Width: ${calculationResults.parameters.width} mm
+• Bend Radius: ${calculationResults.parameters.bendRadius} mm
+• K-Factor: ${calculationResults.parameters.kFactor}
+
+INDIVIDUAL BAR CALCULATIONS:
+=================================================================
+
+`;
+
+            calculationResults.barResults.forEach((result, index) => {
+                content += `BAR #${index + 1} DIMENSIONS:\n`;
+                for (const [key, value] of Object.entries(result)) {
+                    if (typeof value === 'number') {
+                        content += `${key}: ${value.toFixed(2)} mm\n`;
+                    } else {
+                        content += `${key}: ${value}\n`;
+                    }
+                }
+                content += '\n';
+            });
+
+            content += `
+=================================================================
+TOTAL MATERIAL REQUIREMENTS:
+• Total flat length needed: ${calculationResults.totalFlatLength.toFixed(2)} mm
+• Total weight: ${calculationResults.totalWeight.toFixed(2)} g
+
+=================================================================
+End of Report - Generated by Copper Busbar Calculator
+Engineer: Seif Mohamed | Email: seifmohamed606@gmail.com
+=================================================================
+`;
+
+            // Create and download file
+            const blob = new Blob([content], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `Busbar_Calculation_Results_${timestamp}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+
+            alert('Results exported successfully!');
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            updateShapeDiagram();
+        });
+    </script>
+</body>
+</html>
+
