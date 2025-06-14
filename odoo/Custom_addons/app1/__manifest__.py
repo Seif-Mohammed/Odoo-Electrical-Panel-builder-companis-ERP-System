@@ -3,7 +3,7 @@
     'version': '1.0',
     'summary': 'Simple authorization system for inventory movements',
     'description': """
-        Simple module to manage authorization for issuing and receiving products
+        Simple module to manage inventory with echnical office and manufacturing departments.
     """,
     'author': 'Seif Mohamed Ramadan',
     'depends': ['base' ,'mail', 'web'],
