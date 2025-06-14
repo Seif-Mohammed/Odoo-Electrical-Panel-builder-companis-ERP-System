@@ -1,7 +1,11 @@
-[build]
-builder = "dockerfile"
-
-[deploy]
-healthcheckPath = "/web/database/selector"
-healthcheckTimeout = 300
-restartPolicyType = "on_failure"
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "dockerfile"
+  },
+  "deploy": {
+    "numReplicas": 1,
+    "sleepApplication": false,
+    "restartPolicyType": "always"
+  }
+}
