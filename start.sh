@@ -1,19 +1,16 @@
 #!/bin/bash
 
-# Parse DATABASE_URL if provided
-if [ ! -z "$DATABASE_URL" ]; then
-    # Extract components from DATABASE_URL
-    DB_HOST=$(echo $DATABASE_URL | sed -n 's/.*@\([^:]*\):.*/\1/p')
-    DB_PORT=$(echo $DATABASE_URL | sed -n 's/.*:\([0-9]*\)\/.*/\1/p')
-    DB_NAME=$(echo $DATABASE_URL | sed -n 's/.*\/\([^?]*\).*/\1/p')
-    DB_USER=$(echo $DATABASE_URL | sed -n 's/.*\/\/\([^:]*\):.*/\1/p')
-    DB_PASSWORD=$(echo $DATABASE_URL | sed -n 's/.*\/\/[^:]*:\([^@]*\)@.*/\1/p')
-    
-    export DB_HOST DB_PORT DB_NAME DB_USER DB_PASSWORD
-fi
+# Wait for database to be ready
+until pg_isready -h $DB_HOST -p $DB_PORT -U $DB_USER; do
+  echo "Waiting for database..."
+  sleep 2
+done
 
-# Set default admin password if not provided
-export ADMIN_PASSWORD=${ADMIN_PASSWORD:-admin123}
+# Initialize database if it doesn't exist
+python3 odoo-bin -c odoo.conf -d $DB_NAME --init=base --stop-after-init
+
+# Install your custom module
+python3 odoo-bin -c odoo.conf -d $DB_NAME -i app1 --stop-after-init
 
 # Start Odoo
-python3 odoo/odoo-bin -c odoo.conf
+exec python3 odoo-bin -c odoo.conf
