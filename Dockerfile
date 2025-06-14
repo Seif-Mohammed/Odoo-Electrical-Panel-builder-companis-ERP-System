@@ -40,4 +40,4 @@ USER odoo
 EXPOSE 8069
 
 # Start command
-CMD ["python3", "odoo/odoo-bin", "-c", "odoo.conf"]
+CMD ["python3", "odoo-bin", "-c", "odoo.conf"]
