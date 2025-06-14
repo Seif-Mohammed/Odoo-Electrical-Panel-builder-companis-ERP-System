@@ -2,42 +2,49 @@ FROM python:3.11-slim
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y \
-    gcc \
-    g++ \
-    libxml2-dev \
-    libxslt1-dev \
-    libevent-dev \
-    libsasl2-dev \
-    libldap2-dev \
+    wget \
+    git \
+    postgresql-client \
+    build-essential \
     libpq-dev \
-    libpng-dev \
     libjpeg-dev \
     libfreetype6-dev \
-    zlib1g-dev \
+    liblcms2-dev \
     libwebp-dev \
-    git \
-    curl \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libxcb1-dev \
+    libldap2-dev \
+    libsasl2-dev \
+    libssl-dev \
+    node-less \
     && rm -rf /var/lib/apt/lists/*
-
-# Set working directory
-WORKDIR /odoo
-
-# Copy requirements first for better caching
-COPY requirements.txt .
-RUN pip install --no-cache-dir -r requirements.txt
-
-# Copy Odoo files
-COPY . .
 
 # Create odoo user
 RUN useradd -ms /bin/bash odoo
-RUN chown -R odoo:odoo /odoo
+
+# Set work directory
+WORKDIR /opt/odoo
+
+# Copy and install Python requirements
+COPY requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy Odoo source code
+COPY . .
+
+# Copy custom addons
+RUN mkdir -p /opt/odoo/custom_addons
+COPY odoo/Custom_addons /opt/odoo/custom_addons/
+
+# Set permissions
+RUN chown -R odoo:odoo /opt/odoo
 
 # Switch to odoo user
 USER odoo
 
 # Expose port
-EXPOSE 8069
+EXPOSE $PORT
 
 # Start command
 CMD ["python3", "odoo-bin", "-c", "odoo.conf"]
