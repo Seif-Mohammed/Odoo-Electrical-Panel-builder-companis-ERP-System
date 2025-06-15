@@ -1,6 +1,6 @@
 # Odoo Electrical Panel Builder ERP System
 
-[![Odoo Version](https://img.shields.io/badge/Odoo-17.0-blue.svg)](https://www.odoo.com/)
+[![Odoo Version](https://img.shields.io/badge/Odoo-18.0-blue.svg)](https://www.odoo.com/)
 [![License](https://img.shields.io/badge/License-LGPL--3.0-green.svg)](https://www.gnu.org/licenses/lgpl-3.0)
 [![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 
@@ -108,52 +108,54 @@ Open your web browser and navigate to: `http://localhost:8069`
 - **Password**: admin
 
 ## 📁 Project Structure
-
-  odoo/Custom_addons/app1
-      ├── controllers
-      │   ├── __init__.py
-      │   └── Manufacturing_entry.py
-      ├── custom_programs
-      ├── drawings
-      │   └── A02_1000x1700x400.dwg
-      ├── i18n
-      │   ├── app1.pot
-      │   ├── ar_001.mo
-      │   └── ar_001.po
-      ├── __init__.py
-      ├── __manifest__.py
-      ├── models
-      │   ├── __init__.py
-      │   ├── inventory_auth.py
-      │   ├── manufacturing.py
-      │   ├── tech_dashboard.py
-      │   └── technical_office.py
-      ├── reports
-      │   └── bom_report.xml
-      ├── security
-      │   ├── ir.model.access.csv
-      │   └── security.xml
-      ├── static
-      │   ├── description
-      │   │   ├── icon.png
-      │   │   └── logo.png
-      │   └── src
-      │       ├── css
-      │       ├── http
-      │       ├── js
-      │       └── xml
-      ├── tests
-      │   ├── __init__.py
-      │   ├── test_inventory.py
-      │   └── test_technical_office.py
-      └── views
-          ├── inventory_auth_views.xml
-          ├── manufacturing_views.xml
-          └── technical_office_views.xml
+Odoo-Electrical-Panel-builder-companis-ERP-System/
+├── odoo/                            # Odoo core installation
+│   └── Custom_addons/               # Custom modules directory
+│       └── app1/                    # Main electrical panel builder module
+│           ├── controllers/         # HTTP controllers and routing
+│           │   ├── __init__.py
+│           │   └── Manufacturing_entry.py
+│           ├── custom_programs/     # Custom business logic programs
+│           ├── drawings/            # CAD drawings and technical files
+│           │   └── A02_1000x1700x400.dwg
+│           ├── i18n/               # Internationalization files
+│           │   ├── app1.pot        # Translation template
+│           │   ├── ar_001.mo       # Arabic translations (compiled)
+│           │   └── ar_001.po       # Arabic translations (source)
+│           ├── __init__.py         # Module initialization
+│           ├── __manifest__.py     # Module manifest and metadata
+│           ├── models/             # Data models and business logic
+│           │   ├── __init__.py
+│           │   ├── inventory_auth.py    # Inventory authorization
+│           │   ├── manufacturing.py     # Manufacturing processes
+│           │   ├── tech_dashboard.py    # Technical dashboard
+│           │   └── technical_office.py  # Technical office management
+│           ├── reports/            # Report templates
+│           │   └── bom_report.xml  # Bill of Materials report
+│           ├── security/           # Access control and permissions
+│           │   ├── ir.model.access.csv  # Model access rights
+│           │   └── security.xml         # Security groups and rules
+│           ├── static/             # Static web assets
+│           │   ├── description/    # Module description assets
+│           │   │   ├── icon.png    # Module icon
+│           │   │   └── logo.png    # Company logo
+│           │   └── src/            # Web interface assets
+│           │       ├── css/        # Stylesheets
+│           │       ├── http/       # HTTP-related assets
+│           │       ├── js/         # JavaScript files
+│           │       └── xml/        # XML templates
+│           ├── tests/              # Unit tests
+│           │   ├── __init__.py
+│           │   ├── test_inventory.py      # Inventory module tests
+│           │   └── test_technical_office.py # Technical office tests
+│           └── views/              # User interface definitions
+│               ├── inventory_auth_views.xml    # Inventory UI views
+│               ├── manufacturing_views.xml     # Manufacturing UI views
+│               └── technical_office_views.xml  # Technical office UI views
 ├── requirements.txt               # Python dependencies
-├── odoo.conf.example             # Example configuration
-└── README.md                     # This file
-```
+├── odoo.conf                      #  configuration file
+├── run_odoo.sh                    #  server launch file
+└── README.md                      # This documentation file
 
 ## 🔧 Configuration
 
