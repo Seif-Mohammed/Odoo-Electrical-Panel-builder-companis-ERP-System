@@ -108,55 +108,57 @@ Open your web browser and navigate to: `http://localhost:8069`
 - **Password**: admin
 
 ## 📁 Project Structure
+
+```
 Odoo-Electrical-Panel-builder-companis-ERP-System/
-├── odoo/                            # Odoo core installation
-│   └── Custom_addons/               # Custom modules directory
-│       └── app1/                    # Main electrical panel builder module
-│           ├── controllers/         # HTTP controllers and routing
+├── odoo/                                    # Odoo core installation
+│   └── Custom_addons/                       # Custom modules directory
+│       └── app1/                            # Main electrical panel builder module
+│           ├── controllers/                 # HTTP controllers and routing
 │           │   ├── __init__.py
 │           │   └── Manufacturing_entry.py
-│           ├── custom_programs/     # Custom business logic programs
-│           ├── drawings/            # CAD drawings and technical files
+│           ├── custom_programs/             # Custom business logic programs
+│           ├── drawings/                    # CAD drawings and technical files
 │           │   └── A02_1000x1700x400.dwg
-│           ├── i18n/               # Internationalization files
-│           │   ├── app1.pot        # Translation template
-│           │   ├── ar_001.mo       # Arabic translations (compiled)
-│           │   └── ar_001.po       # Arabic translations (source)
-│           ├── __init__.py         # Module initialization
-│           ├── __manifest__.py     # Module manifest and metadata
-│           ├── models/             # Data models and business logic
+│           ├── i18n/                       # Internationalization files
+│           │   ├── app1.pot                # Translation template
+│           │   ├── ar_001.mo               # Arabic translations (compiled)
+│           │   └── ar_001.po               # Arabic translations (source)
+│           ├── __init__.py                 # Module initialization
+│           ├── __manifest__.py             # Module manifest and metadata
+│           ├── models/                     # Data models and business logic
 │           │   ├── __init__.py
-│           │   ├── inventory_auth.py    # Inventory authorization
-│           │   ├── manufacturing.py     # Manufacturing processes
-│           │   ├── tech_dashboard.py    # Technical dashboard
-│           │   └── technical_office.py  # Technical office management
-│           ├── reports/            # Report templates
-│           │   └── bom_report.xml  # Bill of Materials report
-│           ├── security/           # Access control and permissions
-│           │   ├── ir.model.access.csv  # Model access rights
-│           │   └── security.xml         # Security groups and rules
-│           ├── static/             # Static web assets
-│           │   ├── description/    # Module description assets
-│           │   │   ├── icon.png    # Module icon
-│           │   │   └── logo.png    # Company logo
-│           │   └── src/            # Web interface assets
-│           │       ├── css/        # Stylesheets
-│           │       ├── http/       # HTTP-related assets
-│           │       ├── js/         # JavaScript files
-│           │       └── xml/        # XML templates
-│           ├── tests/              # Unit tests
+│           │   ├── inventory_auth.py       # Inventory authorization
+│           │   ├── manufacturing.py        # Manufacturing processes
+│           │   ├── tech_dashboard.py       # Technical dashboard
+│           │   └── technical_office.py     # Technical office management
+│           ├── reports/                    # Report templates
+│           │   └── bom_report.xml          # Bill of Materials report
+│           ├── security/                   # Access control and permissions
+│           │   ├── ir.model.access.csv     # Model access rights
+│           │   └── security.xml            # Security groups and rules
+│           ├── static/                     # Static web assets
+│           │   ├── description/            # Module description assets
+│           │   │   ├── icon.png            # Module icon
+│           │   │   └── logo.png            # Company logo
+│           │   └── src/                    # Web interface assets
+│           │       ├── css/                # Stylesheets
+│           │       ├── http/               # HTTP-related assets
+│           │       ├── js/                 # JavaScript files
+│           │       └── xml/                # XML templates
+│           ├── tests/                      # Unit tests
 │           │   ├── __init__.py
-│           │   ├── test_inventory.py      # Inventory module tests
+│           │   ├── test_inventory.py       # Inventory module tests
 │           │   └── test_technical_office.py # Technical office tests
-│           └── views/              # User interface definitions
-│               ├── inventory_auth_views.xml    # Inventory UI views
-│               ├── manufacturing_views.xml     # Manufacturing UI views
-│               └── technical_office_views.xml  # Technical office UI views
-├── requirements.txt               # Python dependencies
-├── odoo.conf                      #  configuration file
-├── run_odoo.sh                    #  server launch file
-└── README.md                      # This documentation file
-
+│           └── views/                      # User interface definitions
+│               ├── inventory_auth_views.xml     # Inventory UI views
+│               ├── manufacturing_views.xml      # Manufacturing UI views
+│               └── technical_office_views.xml   # Technical office UI views
+├── requirements.txt                        # Python dependencies
+├── odoo.conf                              # Configuration file
+├── run_odoo.sh                            # Server launch script
+└── README.md                              # This documentation file
+```
 ## 🔧 Configuration
 
 ### Basic Configuration
