@@ -1,37 +1,347 @@
-# Odoo
+# Odoo Electrical Panel Builder ERP System
 
-[![Build Status](https://runbot.odoo.com/runbot/badge/flat/1/master.svg)](https://runbot.odoo.com/runbot)
-[![Tech Doc](https://img.shields.io/badge/master-docs-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/documentation/master)
-[![Help](https://img.shields.io/badge/master-help-875A7B.svg?style=flat&colorA=8F8F8F)](https://www.odoo.com/forum/help-1)
-[![Nightly Builds](https://img.shields.io/badge/master-nightly-875A7B.svg?style=flat&colorA=8F8F8F)](https://nightly.odoo.com/)
+[![Odoo Version](https://img.shields.io/badge/Odoo-17.0-blue.svg)](https://www.odoo.com/)
+[![License](https://img.shields.io/badge/License-LGPL--3.0-green.svg)](https://www.gnu.org/licenses/lgpl-3.0)
+[![Python Version](https://img.shields.io/badge/Python-3.8%2B-blue.svg)](https://www.python.org/)
 
-Odoo is a suite of web based open source business apps.
+A comprehensive ERP solution built on Odoo framework, specifically designed for electrical panel manufacturing and assembly companies. This system streamlines operations from quotation to delivery, managing complex bill of materials, manufacturing processes, and electrical component specifications.
 
-The main Odoo Apps include an [Open Source CRM](https://www.odoo.com/page/crm),
-[Website Builder](https://www.odoo.com/app/website),
-[eCommerce](https://www.odoo.com/app/ecommerce),
-[Warehouse Management](https://www.odoo.com/app/inventory),
-[Project Management](https://www.odoo.com/app/project),
-[Billing &amp; Accounting](https://www.odoo.com/app/accounting),
-[Point of Sale](https://www.odoo.com/app/point-of-sale-shop),
-[Human Resources](https://www.odoo.com/app/employees),
-[Marketing](https://www.odoo.com/app/social-marketing),
-[Manufacturing](https://www.odoo.com/app/manufacturing),
-[...](https://www.odoo.com/)
+## 🚀 Features
 
-Odoo Apps can be used as stand-alone applications, but they also integrate seamlessly so you get
-a full-featured [Open Source ERP](https://www.odoo.com) when you install several Apps.
+### Core Manufacturing Modules
+- **Custom Bill of Materials (BOM)** - Manage complex electrical panel configurations with multi-level BOMs
+- **Manufacturing Resource Planning (MRP)** - Plan and schedule panel production with material requirements
+- **Quality Control** - Integrated testing and certification workflows for electrical panels
+- **Work Order Management** - Track assembly progress and technician assignments
 
-## Getting started with Odoo
+### Electrical Industry Specific
+- **Component Specifications Database** - Comprehensive catalog of electrical components with technical specifications
+- **Panel Configuration Builder** - Interactive tool for designing custom electrical panels
+- **Compliance Management** - Track certifications, standards (IEC, UL, CE), and regulatory requirements
+- **Technical Documentation** - Generate wiring diagrams, installation guides, and test certificates
 
-For a standard installation please follow the [Setup instructions](https://www.odoo.com/documentation/master/administration/install/install.html)
-from the documentation.
+### Business Operations
+- **Customer Relationship Management (CRM)** - Manage leads, opportunities, and customer communications
+- **Sales & Quotations** - Generate detailed quotes with technical specifications and pricing
+- **Inventory Management** - Track electrical components, raw materials, and finished panels
+- **Purchase Management** - Vendor management and procurement workflows
+- **Project Management** - Track custom panel projects from design to installation
+- **Accounting & Finance** - Complete financial management with project costing
 
-To learn the software, we recommend the [Odoo eLearning](https://www.odoo.com/slides),
-or [Scale-up, the business game](https://www.odoo.com/page/scale-up-business-game).
-Developers can start with [the developer tutorials](https://www.odoo.com/documentation/master/developer/howtos.html).
+## 📋 Requirements
 
-## Security
+### System Requirements
+- **Operating System**: Linux (Ubuntu 20.04+ recommended), Windows 10+, or macOS 10.14+
+- **Python**: 3.8 or higher
+- **PostgreSQL**: 12.0 or higher
+- **Memory**: Minimum 4GB RAM (8GB+ recommended for production)
+- **Storage**: 10GB+ available disk space
 
-If you believe you have found a security issue, check our [Responsible Disclosure page](https://www.odoo.com/security-report)
-for details and get in touch with us via email.
+### Dependencies
+```bash
+# Core Odoo dependencies
+python3-pip
+python3-dev
+libxml2-dev
+libxslt1-dev
+libevent-dev
+libsasl2-dev
+libldap2-dev
+build-essential
+libpq-dev
+libjpeg-dev
+libfreetype6-dev
+zlib1g-dev
+```
+
+## 🛠️ Installation
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/Seif-Mohammed/Odoo-Electrical-Panel-builder-companis-ERP-System.git
+cd Odoo-Electrical-Panel-builder-companis-ERP-System
+```
+
+### 2. Set Up Python Environment
+```bash
+# Create virtual environment
+python3 -m venv odoo-env
+source odoo-env/bin/activate  # On Windows: odoo-env\Scripts\activate
+
+# Install Python dependencies
+pip3 install -r requirements.txt
+```
+
+### 3. Install PostgreSQL
+```bash
+# Ubuntu/Debian
+sudo apt-get install postgresql postgresql-contrib
+
+# Create database user
+sudo -u postgres createuser -s $USER
+sudo -u postgres createdb odoo_electrical_panel
+```
+
+### 4. Configure Odoo
+```bash
+# Copy configuration file
+cp odoo.conf.example odoo.conf
+
+# Edit configuration
+nano odoo.conf
+```
+
+### 5. Initialize Database
+```bash
+# First-time setup
+python3 odoo-bin -c odoo.conf -d odoo_electrical_panel -i base --stop-after-init
+
+# Start Odoo server
+python3 odoo-bin -c odoo.conf
+```
+
+### 6. Access the System
+Open your web browser and navigate to: `http://localhost:8069`
+
+**Default Login:**
+- **Email**: admin
+- **Password**: admin
+
+## 📁 Project Structure
+
+  odoo/Custom_addons/app1
+      ├── controllers
+      │   ├── __init__.py
+      │   └── Manufacturing_entry.py
+      ├── custom_programs
+      ├── drawings
+      │   └── A02_1000x1700x400.dwg
+      ├── i18n
+      │   ├── app1.pot
+      │   ├── ar_001.mo
+      │   └── ar_001.po
+      ├── __init__.py
+      ├── __manifest__.py
+      ├── models
+      │   ├── __init__.py
+      │   ├── inventory_auth.py
+      │   ├── manufacturing.py
+      │   ├── tech_dashboard.py
+      │   └── technical_office.py
+      ├── reports
+      │   └── bom_report.xml
+      ├── security
+      │   ├── ir.model.access.csv
+      │   └── security.xml
+      ├── static
+      │   ├── description
+      │   │   ├── icon.png
+      │   │   └── logo.png
+      │   └── src
+      │       ├── css
+      │       ├── http
+      │       ├── js
+      │       └── xml
+      ├── tests
+      │   ├── __init__.py
+      │   ├── test_inventory.py
+      │   └── test_technical_office.py
+      └── views
+          ├── inventory_auth_views.xml
+          ├── manufacturing_views.xml
+          └── technical_office_views.xml
+├── requirements.txt               # Python dependencies
+├── odoo.conf.example             # Example configuration
+└── README.md                     # This file
+```
+
+## 🔧 Configuration
+
+### Basic Configuration
+Edit `odoo.conf` to customize your installation:
+
+```ini
+[options]
+# Server configuration
+xmlrpc_port = 8069
+db_host = localhost
+db_port = 5432
+db_user = odoo
+db_password = your_password
+db_name = odoo_electrical_panel
+
+# Paths
+addons_path = ./addons,./odoo/addons
+data_dir = ./data
+
+# Logging
+log_level = info
+logfile = ./logs/odoo.log
+
+# Performance
+workers = 2
+max_cron_threads = 1
+```
+
+### Custom Module Configuration
+Enable electrical panel specific modules:
+1. Go to Apps menu
+2. Remove "Apps" filter
+3. Search and install:
+   - Electrical Panel Builder
+   - Component Management
+   - Panel Manufacturing
+   - Electrical Compliance
+
+## 📚 Usage
+
+### Quick Start Guide
+
+1. **Set Up Company Information**
+   - Configure your electrical panel manufacturing company details
+   - Set up warehouses and manufacturing locations
+
+2. **Import Component Catalog**
+   - Import electrical components from `data/components_catalog.csv`
+   - Configure component specifications and suppliers
+
+3. **Create Your First Panel**
+   - Use the Panel Configuration Builder
+   - Define BOM with electrical components
+   - Set up manufacturing routing
+
+4. **Generate Quotation**
+   - Create customer quotation with technical specifications
+   - Include compliance requirements and certifications
+
+5. **Process Manufacturing Order**
+   - Convert quotation to sales order
+   - Generate manufacturing order
+   - Track assembly progress
+
+### Key Workflows
+
+#### Panel Design Workflow
+1. **Customer Requirements** → 2. **Technical Design** → 3. **BOM Creation** → 4. **Quotation** → 5. **Approval** → 6. **Manufacturing**
+
+#### Quality Control Process
+1. **Incoming Inspection** → 2. **In-Process Testing** → 3. **Final Testing** → 4. **Certification** → 5. **Delivery**
+
+## 🧪 Testing
+
+Run the test suite to ensure everything is working correctly:
+
+```bash
+# Run all tests
+python3 odoo-bin -c odoo.conf -d test_database --test-enable --stop-after-init
+
+# Run specific module tests
+python3 odoo-bin -c odoo.conf -d test_database --test-enable -i electrical_panel_builder --stop-after-init
+```
+
+## 🚀 Deployment
+
+### Production Deployment
+
+1. **Server Setup**
+```bash
+# Install dependencies
+sudo apt-get update
+sudo apt-get install nginx postgresql-12 python3-pip
+
+# Configure PostgreSQL for production
+sudo -u postgres psql -c "CREATE USER odoo WITH PASSWORD 'secure_password';"
+sudo -u postgres psql -c "CREATE DATABASE odoo_production OWNER odoo;"
+```
+
+2. **Application Deployment**
+```bash
+# Clone repository
+git clone https://github.com/Seif-Mohammed/Odoo-Electrical-Panel-builder-companis-ERP-System.git /opt/odoo
+
+# Set up production configuration
+cp /opt/odoo/config/odoo.conf.production /opt/odoo/odoo.conf
+
+# Create systemd service
+sudo systemctl enable odoo
+sudo systemctl start odoo
+```
+
+3. **Web Server Configuration**
+Configure Nginx as reverse proxy (see `docs/nginx_config.md`)
+
+## 🤝 Contributing
+
+We welcome contributions to improve the Odoo Electrical Panel Builder ERP System!
+
+### How to Contribute
+
+1. **Fork the Repository**
+2. **Create Feature Branch**
+   ```bash
+   git checkout -b feature/amazing-feature
+   ```
+3. **Commit Changes**
+   ```bash
+   git commit -m 'Add amazing feature'
+   ```
+4. **Push to Branch**
+   ```bash
+   git push origin feature/amazing-feature
+   ```
+5. **Open Pull Request**
+
+### Development Guidelines
+
+- Follow PEP 8 style guide for Python code
+- Write comprehensive docstrings for all functions
+- Include unit tests for new features
+- Update documentation for any changes
+- Ensure backward compatibility
+
+### Code Standards
+- Use meaningful variable and function names
+- Comment complex business logic
+- Follow Odoo development guidelines
+- Maintain module dependencies properly
+
+## 📄 License
+
+This project is licensed under the GNU Lesser General Public License v3.0 (LGPL-3.0) - see the [LICENSE](LICENSE) file for details.
+
+### Third-Party Licenses
+- **Odoo Community Edition**: LGPL-3.0
+- **Python Dependencies**: Various (see requirements.txt)
+
+## 📞 Support & Contact
+
+### Getting Help
+- **Documentation**: Check the `docs/` folder for detailed guides
+- **Issues**: Report bugs via [GitHub Issues](https://github.com/Seif-Mohammed/Odoo-Electrical-Panel-builder-companis-ERP-System/issues)
+- **Discussions**: Join project discussions on GitHub
+
+### Professional Support
+For professional support, customization, or training services, please contact:
+
+**Project Maintainer**: Seif Mohammed
+- **Email**: [Email](seifmohamed606@gmail.com)
+- **LinkedIn**: [LinkedIn Profile](https://www.linkedin.com/in/seifmo/)
+- **GitHub**: [@Seif-Mohammed](https://github.com/Seif-Mohammed)
+
+### Community
+- **Odoo Community**: [https://www.odoo.com/forum](https://www.odoo.com/forum)
+
+
+
+## 🙏 Acknowledgments
+
+- **Odoo SA** - For the amazing ERP framework
+- **Electrical Industry Partners** - For requirements and testing
+- **Open Source Community** - For continuous support and contributions
+- **Beta Testers** - For valuable feedback and bug reports
+
+---
+
+**⭐ If this project helps your electrical panel manufacturing business, please consider giving it a star!**
+
+**🔗 Connect with us on social media for updates and industry insights.**
