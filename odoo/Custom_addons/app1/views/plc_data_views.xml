@@ -1,0 +1,189 @@
+<odoo>
+    <record id="view_plc_data_list" model="ir.ui.view">
+        <field name="name">plc.data.list</field>
+        <field name="model">plc.data</field>
+        <field name="arch" type="xml">
+            <list decoration-success="status=='online'" decoration-warning="status=='offline'" decoration-danger="status=='error'">
+                <field name="name"/>
+                <field name="plc_ip"/>
+                <field name="timestamp"/>
+                <field name="status" widget="badge"/>
+                <field name="active_inputs"/>
+                <field name="total_inputs"/>
+                <field name="active_outputs"/>
+                <field name="total_outputs"/>
+                <field name="input_activity_rate" widget="percentage"/>
+                <field name="output_activity_rate" widget="percentage"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="view_plc_data_form" model="ir.ui.view">
+        <field name="name">plc.data.form</field>
+        <field name="model">plc.data</field>
+        <field name="arch" type="xml">
+            <form>
+                <header>
+                    <field name="status" widget="status_badge"/>
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>
+                            <field name="name"/>
+                        </h1>
+                    </div>
+                    
+                    <group>
+                        <group name="plc_info" string="PLC Information">
+                            <field name="plc_ip"/>
+                            <field name="plc_rack"/>
+                            <field name="plc_slot"/>
+                            <field name="timestamp"/>
+                            <field name="api_key"/>
+                        </group>
+                        
+                        <group name="statistics" string="I/O Statistics">
+                            <field name="active_inputs"/>
+                            <field name="total_inputs"/>
+                            <field name="input_activity_rate" widget="percentage"/>
+                            <field name="active_outputs"/>
+                            <field name="total_outputs"/>
+                            <field name="output_activity_rate" widget="percentage"/>
+                        </group>
+                    </group>
+                    
+                    <notebook>
+                        <page string="Input States">
+                            <group>
+                                <div class="o_field_widget">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5>Digital Inputs</h5>
+                                            <field name="input_data" widget="json" nolabel="1"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </group>
+                        </page>
+                        
+                        <page string="Output States">
+                            <group>
+                                <div class="o_field_widget">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <h5>Digital Outputs</h5>
+                                            <field name="output_data" widget="json" nolabel="1"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </group>
+                        </page>
+                        
+                        <page string="Raw Data">
+                            <field name="raw_data" widget="json" nolabel="1"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_plc_data_search" model="ir.ui.view">
+        <field name="name">plc.data.search</field>
+        <field name="model">plc.data</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="plc_ip"/>
+                <field name="timestamp"/>
+                <field name="status"/>
+                
+                <filter name="online" string="Online" domain="[('status', '=', 'online')]"/>
+                <filter name="offline" string="Offline" domain="[('status', '=', 'offline')]"/>
+                <filter name="error" string="Error" domain="[('status', '=', 'error')]"/>
+                
+                <separator/>
+                <filter name="today" string="Today" domain="[('timestamp', '>=', (datetime.datetime.now() - datetime.timedelta(days=1)).strftime('%Y-%m-%d'))]"/>
+                <filter name="this_week" string="This Week" domain="[('timestamp', '>=', (datetime.datetime.now() - datetime.timedelta(days=7)).strftime('%Y-%m-%d'))]"/>
+                
+                <group expand="0" string="Group By">
+                    <filter name="group_by_plc_ip" string="PLC IP" domain="[]" context="{'group_by': 'plc_ip'}"/>
+                    <filter name="group_by_status" string="Status" domain="[]" context="{'group_by': 'status'}"/>
+                    <filter name="group_by_date" string="Date" domain="[]" context="{'group_by': 'timestamp:day'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_plc_data_kanban" model="ir.ui.view">
+        <field name="name">plc.data.kanban</field>
+        <field name="model">plc.data</field>
+        <field name="arch" type="xml">
+            <kanban>
+                <field name="plc_ip"/>
+                <field name="timestamp"/>
+                <field name="status"/>
+                <field name="active_inputs"/>
+                <field name="active_outputs"/>
+                <field name="input_activity_rate"/>
+                <field name="output_activity_rate"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <div class="oe_kanban_content">
+                                <div class="o_kanban_record_top">
+                                    <div class="o_kanban_record_headings">
+                                        <strong class="o_kanban_record_title">
+                                            <field name="plc_ip"/>
+                                        </strong>
+                                        <div class="o_kanban_record_subtitle">
+                                            <field name="timestamp"/>
+                                        </div>
+                                    </div>
+                                    <div class="o_kanban_record_right">
+                                        <span class="badge" t-attf-class="badge-#{record.status.raw_value == 'online' and 'success' or record.status.raw_value == 'offline' and 'warning' or 'danger'}">
+                                            <field name="status"/>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_record_body">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <span class="text-muted">Inputs:</span>
+                                            <span><field name="active_inputs"/>/<field name="total_inputs"/></span>
+                                        </div>
+                                        <div class="col-6">
+                                            <span class="text-muted">Outputs:</span>
+                                            <span><field name="active_outputs"/>/<field name="total_outputs"/></span>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-2">
+                                        <div class="col-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-info" t-attf-style="width: #{record.input_activity_rate.raw_value}%"></div>
+                                            </div>
+                                        </div>
+                                        <div class="col-6">
+                                            <div class="progress">
+                                                <div class="progress-bar bg-warning" t-attf-style="width: #{record.output_activity_rate.raw_value}%"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+
+    <record id="action_plc_data" model="ir.actions.act_window">
+        <field name="name">PLC Data</field>
+        <field name="res_model">plc.data</field>
+        <field name="view_mode">kanban,list,form</field>
+        <field name="context">{'search_default_today': 1}</field>
+    </record>
+
+    <menuitem id="menu_plc_root" name="PLC Monitoring"/>
+    <menuitem id="menu_plc_data" name="PLC Data" parent="menu_plc_root" action="action_plc_data"/>
+</odoo>
